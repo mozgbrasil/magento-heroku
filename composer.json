@@ -1,6 +1,6 @@
 {
     "name": "mozgbrasil/magento-heroku",
-    "description": "Magento build",
+    "description": "Magento App",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "license": [
@@ -15,10 +15,10 @@
         }
     ],
     "repositories":[
-    {
-        "type":"composer",
-        "url":"https?://packages.firegento.com"
-    }
+        {
+            "type":"composer",
+            "url":"https?://packages.firegento.com"
+        }
     ],
     "extra":{
         "magento-root-dir":"root",
@@ -35,5 +35,5 @@
         "aoepeople/aoe_scheduler": "^1.5",
         "connect20/mage_locale_pt_br": "^1.9",
         "aschroder/smtp_pro": "^2.0"
-}
+    }
 }
