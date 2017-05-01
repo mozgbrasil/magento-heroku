@@ -6,6 +6,14 @@
 
 # Magento\Heroku
 
+## Comandos CLI
+
+heroku --help
+
+heroku logs --app magento-heroku --tail
+
+## Referencias
+
 https://www.heroku.com/
 
 https://elements.heroku.com/addons/cleardb

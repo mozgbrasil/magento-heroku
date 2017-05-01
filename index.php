@@ -28,14 +28,15 @@ mysql -h 'us-cdbr-iron-east-03.cleardb.net' -u 'b808728448ca7e' -p 'heroku_5714b
 
 print_r($_SERVER);
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$database = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$database = parse_url(getenv("MONGODB_URI"));
 
-//print_r($url);
+//print_r($database);
 
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
+$server = $database["host"];
+$username = $database["user"];
+$password = $database["pass"];
+$db = substr($database["path"], 1);
 
 // Create connection
 $conn = new mysqli($server, $username, $password, $db);
