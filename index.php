@@ -26,9 +26,11 @@ mysql -h 'us-cdbr-iron-east-03.cleardb.net' -u 'b808728448ca7e' -p 'heroku_5714b
 */
 
 
+print_r($_SERVER);
+
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-print_r($url);
+//print_r($url);
 
 $server = $url["host"];
 $username = $url["user"];
