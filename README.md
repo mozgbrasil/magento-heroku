@@ -50,6 +50,8 @@ heroku keys
 
 ssh -v git@heroku.com
 
+heroku ps --app magento-heroku
+
 -
 
 heroku run --app magento-heroku 'ls /app/vendor/heroku/heroku-buildpack-php/conf/php/'
