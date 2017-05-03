@@ -38,51 +38,47 @@ if ( array_key_exists('objects', $_REQUEST) ){
 
 if ( array_key_exists('database', $_REQUEST) ){
 
-    /*
-    [host] => us-cdbr-iron-east-03.cleardb.net
-    [user] => b808728448ca7e
-    [pass] => 2c744f8b
-    [path] => /heroku_5714b88b9ab57b4
-    [query] => reconnect=true
-
-    mysql -h 'us-cdbr-iron-east-03.cleardb.net' -u 'b808728448ca7e' -p 'heroku_5714b88b9ab57b4' -e "SHOW TABLES"
-
-    */
-
-    $database = parse_url(getenv("CLEARDB_DATABASE_URL"));
-    $database = parse_url(getenv("MONGODB_URI"));
-    $database = parse_url(getenv("DATABASE_URL"));
-
-    print_r($database);
-
-    $host = $database["host"];
-    $user = $database["user"];
-    $pass = $database["pass"];
-    $db = substr($database["path"], 1);
-
     if ( array_key_exists('connect', $_REQUEST) ){
 
         // Create connection
 
+        /*
+        $mysql_database = parse_url(getenv("CLEARDB_DATABASE_URL")); 
+        print_r($mysql_database);
+        $host = $mysql_database["host"];
+        $user = $mysql_database["user"];
+        $pass = $mysql_database["pass"];
+        $db = substr($mysql_database["path"], 1);
+
         try {
             $conn = new mysqli($host, $user, $pass, $db);
-            print_r($conn);
+        } catch (Exception $e) {
+            print_r($e->getMessage());
+        }
+        */
+
+        $postgresql_database = parse_url(getenv("DATABASE_URL"));
+        print_r($postgresql_database);
+        $host = $postgresql_database["host"];
+        $port = $postgresql_database["port"];
+        $user = $postgresql_database["user"];
+        $pass = $postgresql_database["pass"];
+        $db = substr($postgresql_database["path"], 1);
+
+        try {
+            $conn = new pg_connect("host=$host port=$port dbname=$db user=$user password=$pass");
         } catch (Exception $e) {
             print_r($e->getMessage());
         }
 
-        try {
-            $conn = new MongoClient("mongodb://$user:$pass@$host:27391/$db"); 
-        } catch (Exception $e) {
-            print_r($e->getMessage());
-        }
+        print_r($conn);
+
+        /*
 
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
-        } 
-
-        print_r($conn);
+        }       
 
         $sql = "show tables";
         $result = $conn->query($sql);
@@ -99,6 +95,8 @@ if ( array_key_exists('database', $_REQUEST) ){
         }
 
         $conn->close();
+
+        */
 
     }
 }
