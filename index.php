@@ -39,15 +39,29 @@ if ( array_key_exists('mysqli', $_REQUEST) ){
 
     print_r($database);
 
-    $server = $database["host"];
-    $username = $database["user"];
-    $password = $database["pass"];
+    $host = $database["host"];
+    $user = $database["user"];
+    $pass = $database["pass"];
     $db = substr($database["path"], 1);
 
     if ( array_key_exists('connect', $_REQUEST) ){
 
         // Create connection
-        $conn = new mysqli($server, $username, $password, $db);
+
+        try {
+            $conn = new mysqli($host, $user, $pass, $db);
+            print_r($conn);
+        } catch (Exception $e) {
+            print_r($e->getMessage());
+        }
+
+        try {
+            $conn = new PDO("mongodb://$user:$pass@$host:27391/$db", "$user", "$pass");
+            print_r($conn);
+        } catch (Exception $e) {
+            print_r($e->getMessage());
+        }
+
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
