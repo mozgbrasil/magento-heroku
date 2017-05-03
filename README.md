@@ -8,6 +8,12 @@
 
 ## Comandos CLI
 
+cd ~/dados/public_html/mozg/git/magento-heroku
+
+heroku
+
+heroku notifications
+
 heroku --help
 
 heroku list
@@ -24,11 +30,15 @@ heroku pg --app magento-heroku
 
 heroku releases --app magento-heroku
 
+heroku run --app magento-heroku 'composer --version ; php -v ; '
+
 ## Referencias
 
 https://www.heroku.com/
 
 https://elements.heroku.com/addons/cleardb
+
+https://github.com/delight-im/Heroku-PHP-Apache2
 
 
 :cat2:
