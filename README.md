@@ -52,6 +52,8 @@ ssh -v git@heroku.com
 
 heroku ps --app magento-heroku
 
+https://devcenter.heroku.com/changelog-items/1112
+
 -
 
 heroku run --app magento-heroku 'ls /app/vendor/heroku/heroku-buildpack-php/conf/php/'
@@ -63,6 +65,8 @@ heroku run --app magento-heroku 'ls /app/vendor/heroku/heroku-buildpack-php/conf
 https://www.heroku.com/
 
 https://elements.heroku.com/addons/cleardb
+
+https://elements.heroku.com/addons/heroku-exec
 
 https://github.com/delight-im/Heroku-PHP-Apache2
 
