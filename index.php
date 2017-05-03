@@ -10,12 +10,22 @@ require 'vendor/autoload.php';
 
 //
 
-// http://magento-heroku.herokuapp.com/?objects=true&database=true&connect=true
+// http://magento-heroku.herokuapp.com/?objects=true&database=true&scandir=true
 
 echo '<pre>';
 
 print_r($_SERVER);
 print_r($_REQUEST);
+
+//
+
+if ( array_key_exists('scandir', $_REQUEST) ){
+
+    $dir    = isset($_REQUEST['dir']) ? $_REQUEST['dir'] : __DIR__;
+    $files  = scandir($dir);
+    dump($files);
+
+}
 
 //
 
