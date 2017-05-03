@@ -57,13 +57,6 @@ if ( array_key_exists('database', $_REQUEST) ){
         }
 
         try {
-            $conn = new PDO("mongodb://$user:$pass@$host:27391/$db", "$user", "$pass");
-            print_r($conn);
-        } catch (Exception $e) {
-            print_r($e->getMessage());
-        }
-
-        try {
             $conn = new MongoClient("mongodb://$user:$pass@$host:27391/$db"); 
         } catch (Exception $e) {
             print_r($e->getMessage());
