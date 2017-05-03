@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "291297d9d1f6f7ea093b854cd020f495",
+    "content-hash": "9d9774a8c0aff4aef382cb514192955c",
     "packages": [
         {
             "name": "aoepeople/aoe_scheduler",
@@ -705,7 +705,9 @@
         "ext-mbstring": "*",
         "ext-soap": "*",
         "ext-bcmath": "*",
-        "ext-mcrypt": "*"
+        "ext-mcrypt": "*",
+        "ext-memcached": "*",
+        "ext-mongodb": "*"
     },
     "platform-dev": []
 }

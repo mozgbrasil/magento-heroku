@@ -32,4 +32,4 @@ echo "ignore_user_abort = On" >> /app/vendor/heroku/heroku-buildpack-php/conf/ph
 
 # Launch Apache with PHP
 # Set web root to folder public_html
-vendor/bin/heroku-php-apache2 public_html
+###########vendor/bin/heroku-php-apache2 public_html

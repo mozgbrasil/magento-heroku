@@ -1,0 +1,54 @@
+{
+  "name": "mozgbrasil/magento-heroku",
+  "description": "Magento App",
+  "keywords": [
+    "magento",
+    "heroku",
+    "mozg"
+  ],
+  "website": "http://mozg.com.br/",
+  "repository": "https://github.com/mozgbrasil/magento-heroku",
+  "logo": "http://mozg.com.br/assets/images/logos/Red_star.svg",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "echo 'eu em app.json 1';"
+  },
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of processes to run.",
+      "value": "5"
+    }
+  },
+  "image": "heroku/php",
+  "addons": [
+    "jawsdb",
+    "sendgrid"
+    "openredis",
+    {
+      "plan": "mongolab:shared-single-small",
+      "as": "MONGO"
+    },
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/mozgbrasil/magento-heroku"
+    }
+  ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "echo 'eu em app.json 2';"
+      }
+    }
+  }
+}

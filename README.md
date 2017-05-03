@@ -10,6 +10,8 @@
 
 cd ~/dados/public_html/mozg/git/magento-heroku
 
+composer update --ignore-platform-reqs
+
 heroku
 
 heroku notifications
@@ -30,7 +32,11 @@ heroku pg --app magento-heroku
 
 heroku releases --app magento-heroku
 
-heroku run --app magento-heroku 'composer --version ; php -v ; '
+heroku config --app magento-heroku
+
+heroku run --app magento-heroku 'composer --version ; php -v ; composer update'
+
+heroku open --app magento-heroku
 
 ## Referencias
 
