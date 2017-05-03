@@ -37,37 +37,41 @@ if ( array_key_exists('mysqli', $_REQUEST) ){
     $database = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $database = parse_url(getenv("MONGODB_URI"));
 
-    //print_r($database);
+    print_r($database);
 
     $server = $database["host"];
     $username = $database["user"];
     $password = $database["pass"];
     $db = substr($database["path"], 1);
 
-    // Create connection
-    $conn = new mysqli($server, $username, $password, $db);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
+    if ( array_key_exists('connect', $_REQUEST) ){
 
-    print_r($conn);
+        // Create connection
+        $conn = new mysqli($server, $username, $password, $db);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } 
 
-    $sql = "show tables";
-    $result = $conn->query($sql);
+        print_r($conn);
 
-    print_r($result);
+        $sql = "show tables";
+        $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            print_r($row);
+        print_r($result);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                print_r($row);
+            }
+        } else {
+            echo "0 results";
         }
-    } else {
-        echo "0 results";
-    }
 
-    $conn->close();
+        $conn->close();
+
+    }
 }
 
 //
