@@ -18,7 +18,7 @@ cd ~/dados/public_html/mozg/git/magento-heroku
 
 composer update --ignore-platform-reqs
 
--
+--
 
 heroku --version
 
@@ -48,7 +48,7 @@ heroku run --app magento-heroku 'composer --version ; php -v ; composer update'
 
 heroku open --app magento-heroku
 
--
+--
 
 heroku keys:add
 
@@ -60,11 +60,11 @@ heroku ps --app magento-heroku
 
 https://devcenter.heroku.com/changelog-items/1112
 
--
+--
 
 heroku run --app magento-heroku 'ls /app/vendor/heroku/heroku-buildpack-php/conf/php/'
 
--
+--
 
 ## Referencias
 
