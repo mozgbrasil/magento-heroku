@@ -6,6 +6,12 @@
 
 # Magento\Heroku
 
+## Implantando no Heroku
+
+A implantação no Heroku usará o Nginx e o Postgres.
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Comandos CLI
 
 cd ~/dados/public_html/mozg/git/magento-heroku
@@ -67,6 +73,10 @@ https://www.heroku.com/
 https://elements.heroku.com/addons/cleardb
 
 https://elements.heroku.com/addons/heroku-exec
+
+https://elements.heroku.com/addons/semaphore
+
+https://elements.heroku.com/addons/codeship
 
 https://github.com/delight-im/Heroku-PHP-Apache2
 
