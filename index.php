@@ -10,6 +10,8 @@ require 'vendor/autoload.php';
 
 //
 
+// http://magento-heroku.herokuapp.com/?objects=true&database=true&connect=true
+
 echo '<pre>';
 
 print_r($_SERVER);
@@ -17,9 +19,18 @@ print_r($_REQUEST);
 
 //
 
-if ( array_key_exists('autoloads', $_REQUEST) ){
+if ( array_key_exists('phpinfo', $_REQUEST) ){
+
+    phpinfo();
+
+}
+
+//
+
+if ( array_key_exists('objects', $_REQUEST) ){
 
     print_r(spl_autoload_functions());
+    print_r(get_loaded_extensions());
 
 }
 
