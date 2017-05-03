@@ -12,8 +12,12 @@ require 'vendor/autoload.php';
 
 // http://magento-heroku.herokuapp.com/?objects=true&database=true&scandir=true
 
-dump($_SERVER);
-dump($_REQUEST);
+if ( array_key_exists('server', $_REQUEST) ){
+
+    dump($_SERVER);
+    dump($_REQUEST);
+
+}
 
 //
 
