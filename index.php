@@ -21,6 +21,9 @@ if ( array_key_exists('scandir', $_REQUEST) ){
 
     $dir    = isset($_REQUEST['dir']) ? $_REQUEST['dir'] : __DIR__;
     $files  = scandir($dir);
+    dump(getcwd());
+    dump(dirname(__FILE__));
+    dump(basename(__DIR__));
     dump($dir);
     dump($files);
 
@@ -41,7 +44,6 @@ if ( array_key_exists('objects', $_REQUEST) ){
     $_array = array(
         'spl_autoload_functions()'=>spl_autoload_functions(),
         'get_loaded_extensions()'=>get_loaded_extensions(),
-        'get_called_class()'=>get_called_class(),
         'get_declared_traits()'=>get_declared_traits(),
         'array_keys(get_defined_vars())'=>array_keys(get_defined_vars()),
         'get_defined_constants()'=>get_defined_constants(),
