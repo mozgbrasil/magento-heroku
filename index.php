@@ -63,6 +63,12 @@ if ( array_key_exists('database', $_REQUEST) ){
             print_r($e->getMessage());
         }
 
+        try {
+            $conn = new MongoClient("mongodb://$user:$pass@$host:27391/$db"); 
+        } catch (Exception $e) {
+            print_r($e->getMessage());
+        }
+
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);

@@ -29,7 +29,7 @@
         "ext-gd": "*",
         "ext-mbstring": "*",
         "ext-soap": "*",
-        "ext-zend-guard-loader": "*",
+        "ext-mongodb": "*",
         "magento-hackathon/magento-composer-installer": "~3.0",
         "aydin-hassan/magento-core-composer-installer": "~1.2",
         "firegento/magento": "~1.9.3.1",
