@@ -21,7 +21,7 @@ if ( array_key_exists('autoloads', $_REQUEST) ){
 
 //
 
-if ( array_key_exists('mysqli', $_REQUEST) ){
+if ( array_key_exists('database', $_REQUEST) ){
 
     /*
     [host] => us-cdbr-iron-east-03.cleardb.net
@@ -36,6 +36,7 @@ if ( array_key_exists('mysqli', $_REQUEST) ){
 
     $database = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $database = parse_url(getenv("MONGODB_URI"));
+    $database = parse_url(getenv("DATABASE_URL"));
 
     print_r($database);
 
