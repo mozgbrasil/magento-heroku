@@ -10,7 +10,19 @@
 
 heroku --help
 
+heroku list
+
+heroku spaces
+
+heroku status
+
 heroku logs --app magento-heroku --tail
+
+heroku drains --app magento-heroku
+
+heroku pg --app magento-heroku
+
+heroku releases --app magento-heroku
 
 ## Referencias
 
