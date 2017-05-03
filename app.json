@@ -26,7 +26,7 @@
   "image": "heroku/php",
   "addons": [
     "jawsdb",
-    "sendgrid"
+    "sendgrid",
     "openredis",
     {
       "plan": "mongolab:shared-single-small",
