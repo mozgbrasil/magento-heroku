@@ -27,7 +27,6 @@
   "addons": [
     "jawsdb",
     "sendgrid",
-    "openredis",
     "heroku-postgresql"
   ],
   "buildpacks": [
