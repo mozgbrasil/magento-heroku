@@ -38,8 +38,18 @@ if ( array_key_exists('phpinfo', $_REQUEST) ){
 
 if ( array_key_exists('objects', $_REQUEST) ){
 
-    dump(spl_autoload_functions());
-    dump(get_loaded_extensions());
+    $_array = array(
+        'spl_autoload_functions()'=>spl_autoload_functions(),
+        'get_loaded_extensions()'=>get_loaded_extensions(),
+        'get_called_class()'=>get_called_class(),
+        'get_declared_traits()'=>get_declared_traits(),
+        'array_keys(get_defined_vars())'=>array_keys(get_defined_vars()),
+        'get_defined_constants()'=>get_defined_constants(),
+        'get_defined_functions()'=>get_defined_functions(),
+        'get_declared_classes()'=>get_declared_classes(),
+    );
+
+    dump($_array);
 
 }
 
