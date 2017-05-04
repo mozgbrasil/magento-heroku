@@ -8,7 +8,7 @@
 
 ## Implantando no Heroku
 
-A implantação no Heroku usará o Nginx e o Postgres.
+Clique abaixo para implantar esse APP no Heroku
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -48,7 +48,9 @@ heroku run --app magento-heroku 'composer --version ; php -v ; composer update'
 
 heroku open --app magento-heroku
 
-heroku config:get JAWSDB_URL --app fierce-shore-66004
+
+
+
 
 --
 
