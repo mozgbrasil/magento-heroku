@@ -4,7 +4,7 @@
 
 # https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
 
-printenv >> mozg_log.txt
+# printenv >> mozg_log.txt
 
 #
 
@@ -25,7 +25,7 @@ fi
 
 #
 
-php -f root/install.php -- \
+php -f install.php -- \
 --license_agreement_accepted "yes" \
 --locale "pt_BR" \
 --timezone "America/Sao_Paulo" \

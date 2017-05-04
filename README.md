@@ -68,6 +68,13 @@ heroku run --app magento-heroku 'ls /app/vendor/heroku/heroku-buildpack-php/conf
 
 --
 
+host: db4free.net
+user: magento2heroku
+pass: magento2heroku
+db: magento2heroku
+
+--
+
 ## Referencias
 
 https://www.heroku.com/
@@ -81,6 +88,8 @@ https://elements.heroku.com/addons/semaphore
 https://elements.heroku.com/addons/codeship
 
 https://github.com/delight-im/Heroku-PHP-Apache2
+
+https://www.db4free.net/
 
 
 :cat2:
