@@ -11,7 +11,7 @@
   "logo": "http://mozg.com.br/assets/images/logos/Red_star.svg",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "echo '*** Iniciando postdeploy ***'; bash bootstrap.sh ; echo '*** Finalizando postdeploy ***';"
+    "postdeploy": "echo 'eu em app.json 1'; bash bootstrap.sh;"
   },
   "env": {
     "MAGENTO_USERNAME": {
@@ -33,7 +33,7 @@
   "environments": {
     "test": {
       "scripts": {
-        "test": "echo '*** Iniciando environments ***'; echo '*** Finalizando environments ***';"
+        "test": "echo 'eu em app.json 2';"
       }
     }
   }
