@@ -25,14 +25,13 @@
   },
   "image": "heroku/php",
   "addons": [
+    "cleardb",
+    "heroku-exec",
+    "semaphore",
+    "codeship",
     "jawsdb",
     "sendgrid",
     "heroku-postgresql"
-  ],
-  "buildpacks": [
-    {
-      "url": "https://github.com/mozgbrasil/magento-heroku"
-    }
   ],
   "environments": {
     "test": {
