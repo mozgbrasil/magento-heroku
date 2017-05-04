@@ -10,7 +10,7 @@ require 'vendor/autoload.php';
 
 //
 
-// http://magento-heroku.herokuapp.com/?objects=true&database=true&scandir=true
+// http://magento-heroku.herokuapp.com/?objects=true&database=true&scandir=true&load_file=true&dir=/app/root/var/report&file=/app/root/var/report/941131722661
 
 //
 
@@ -40,6 +40,17 @@ if ( array_key_exists('scandir', $_REQUEST) ){
     dump(basename(__DIR__));
     dump($dir);
     dump($files);
+
+}
+
+//
+
+if ( array_key_exists('load_file', $_REQUEST) ){
+
+    $path_file    = isset($_REQUEST['file']) ? $_REQUEST['file'] : __FILE__;
+    $file = file_get_contents($path_file);
+    dump($path_file);
+    dump($file);
 
 }
 
