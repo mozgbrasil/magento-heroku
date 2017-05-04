@@ -48,6 +48,8 @@ heroku run --app magento-heroku 'composer --version ; php -v ; composer update'
 
 heroku open --app magento-heroku
 
+heroku config:get JAWSDB_URL --app fierce-shore-66004
+
 --
 
 heroku keys:add

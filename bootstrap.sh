@@ -4,7 +4,7 @@
 
 # https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
 
-printenv
+printenv >> mozg_log.txt
 
 #
 
@@ -34,6 +34,7 @@ php -f root/install.php -- \
 --db_name ${dbName} \
 --db_user ${dbUser} \
 --db_pass ${dbPass} \
+--url "http://127.0.0.1/public_html/magento-1.9.3.2-dev35/root/" \
 --skip_url_validation "yes" \
 --use_rewrites "yes" \
 --use_secure "no" \
