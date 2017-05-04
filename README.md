@@ -20,6 +20,8 @@ composer update --ignore-platform-reqs
 
 --
 
+heroku logs --app magento-heroku --tail
+
 heroku --version
 
 heroku
@@ -34,7 +36,7 @@ heroku spaces
 
 heroku status
 
-heroku logs --app magento-heroku --tail
+heroku info --app magento-heroku
 
 heroku drains --app magento-heroku
 
@@ -47,10 +49,6 @@ heroku config --app magento-heroku
 heroku run --app magento-heroku 'composer --version ; php -v ; composer update'
 
 heroku open --app magento-heroku
-
-
-
-
 
 --
 

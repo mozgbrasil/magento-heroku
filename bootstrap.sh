@@ -16,19 +16,23 @@ printenv >> mozg_log.txt
 
 #
 
+MAGENTO_URL=`heroku info --app magento-heroku -s | grep web_url | cut -d= -f2`
+
 QUERY_STRING=`heroku config:get JAWSDB_URL --app magento-heroku | cat $1 | sed -E 's%mysql:\/\/(.*)(.*):(.*)@(.*)(:\d+|.*)(.*)\/%user=\1;password=\3;host=\4;db=\2%'`
 
 eval `echo "${QUERY_STRING}"|tr '&' ';'`
 
-dbHost=${host}
-dbName=${db}
-dbUser=${user}
-dbPass=${password}
+MAGENTO_DB_HOST=${host}
+MAGENTO_DB_NAME=${db}
+MAGENTO_DB_USER=${user}
+MAGENTO_DB_PASS=${password}
 
-echo "${dbHost}"
-echo "${dbName}"
-echo "${dbUser}"
-echo "${dbPass}"
+echo ${HEROKU_APP}
+echo "${MAGENTO_URL}"
+echo "${MAGENTO_DB_HOST}"
+echo "${MAGENTO_DB_NAME}"
+echo "${MAGENTO_DB_USER}"
+echo "${MAGENTO_DB_PASS}"
 
 #if [[ "${JAWSDB_URL}" =~ PATTERN ]]; then
 #  dbUser=${BASH_REMATCH[2]}
@@ -41,18 +45,16 @@ echo "${dbPass}"
 
 #
 
-#--db_pass ${dbPass} \
-#--url "http://127.0.0.1/public_html/magento-1.9.3.2-dev35/root/" \
-
 php -f root/install.php -- \
 --license_agreement_accepted "yes" \
 --locale "pt_BR" \
 --timezone "America/Sao_Paulo" \
 --default_currency "BRL" \
---db_host ${dbHost} \
---db_name ${dbName} \
---db_user ${dbUser} \
---db_pass ${dbPass} \
+--db_host ${MAGENTO_DB_HOST} \
+--db_name ${MAGENTO_DB_NAME} \
+--db_user ${MAGENTO_DB_USER} \
+--db_pass ${MAGENTO_DB_PASS} \
+--url $MAGENTO_URL \
 --skip_url_validation "yes" \
 --use_rewrites "yes" \
 --use_secure "no" \
