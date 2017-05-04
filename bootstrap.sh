@@ -16,10 +16,8 @@ printenv >> mozg_log.txt
 
 #
 
-MAGENTO_URL=`heroku info --app magento-heroku -s | grep web_url | cut -d= -f2`
-
-QUERY_STRING=`heroku config:get JAWSDB_URL --app magento-heroku | cat $1 | sed -E 's%mysql:\/\/(.*)(.*):(.*)@(.*)(:\d+|.*)(.*)\/%user=\1;password=\3;host=\4;db=\2%'`
-
+MAGENTO_URL='http://magento-heroku.herokuapp.com/root/'
+QUERY_STRING=`${JAWSDB_URL} | cat $1 | sed -E 's%mysql:\/\/(.*)(.*):(.*)@(.*)(:\d+|.*)(.*)\/%user=\1;password=\3;host=\4;db=\2%'`
 eval `echo "${QUERY_STRING}"|tr '&' ';'`
 
 MAGENTO_DB_HOST=${host}

@@ -14,11 +14,19 @@
     "postdeploy": "echo 'eu em app.json 1'; bash bootstrap.sh;"
   },
   "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "URL": {
+      "description": "Magento URL",
+      "value": "http://..."
+    },
     "MAGENTO_USERNAME": {
-        "description": "Your Magento Public Key"
+        "description": "Magento Backend UserName"
     },
     "MAGENTO_PASSWORD": {
-        "description": "Your Magento Private Key"
+        "description": "Magento Backend PassWord"
     }
   },
   "image": "heroku/php",
