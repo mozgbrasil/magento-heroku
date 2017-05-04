@@ -4,7 +4,9 @@
 
 # https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
 
-# printenv >> mozg_log.txt
+printenv
+printenv >> mozg_log.txt
+echo printenv
 
 #
 
