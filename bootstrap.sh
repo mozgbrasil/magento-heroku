@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#
+
+# https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
+
+printenv
+
+#
+
 #$(composer config -a http-basic.repo.magento.com ${MAGENTO_USERNAME} ${MAGENTO_PASSWORD})
 #$(composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition vendor/magento)
 
@@ -17,7 +25,7 @@ fi
 
 #
 
-php -f install.php -- \
+php -f root/install.php -- \
 --license_agreement_accepted "yes" \
 --locale "pt_BR" \
 --timezone "America/Sao_Paulo" \
