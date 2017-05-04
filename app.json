@@ -11,22 +11,19 @@
   "logo": "http://mozg.com.br/assets/images/logos/Red_star.svg",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "echo 'eu em app.json 1';"
+    "postdeploy": "echo 'eu em app.json 1'; bash bootstrap.sh;"
   },
   "env": {
-    "SECRET_TOKEN": {
-      "description": "A secret key for verifying the integrity of signed cookies.",
-      "generator": "secret"
+    "MAGENTO_USERNAME": {
+        "description": "Your Magento Public Key"
     },
-    "WEB_CONCURRENCY": {
-      "description": "The number of processes to run.",
-      "value": "5"
+    "MAGENTO_PASSWORD": {
+        "description": "Your Magento Private Key"
     }
   },
   "image": "heroku/php",
   "addons": [
     "cleardb",
-    "heroku-exec",
     "semaphore",
     "codeship",
     "jawsdb",
