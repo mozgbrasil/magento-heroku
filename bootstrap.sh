@@ -73,3 +73,9 @@ php -f root/install.php -- \
 --admin_email "user@example.com" \
 --admin_username "admin" \
 --admin_password "123456a"
+
+#
+
+echo 'Fim'
+
+exit
