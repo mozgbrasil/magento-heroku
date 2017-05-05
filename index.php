@@ -113,7 +113,7 @@ if ( array_key_exists('database', $_REQUEST) ){
 
     // Check connection
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        dump("Connection failed: " . $conn->connect_error);
     }       
 
     $sql = "show tables";
@@ -142,7 +142,7 @@ if ( array_key_exists('database', $_REQUEST) ){
 
     // Check connection
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        dump("Connection failed: " . $conn->connect_error);
     }       
 
     $sql = "show tables";
