@@ -46,7 +46,16 @@ else
     echo "Unable to parse STRING from config"
 fi
 
-#
+# Sample Data
+
+wget https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/1.9.1.0/compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z ;\
+7za x compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z ;\
+tar -xvf compressed-no-mp3-magento-sample-data-1.9.1.0.tar ;\
+cp -ri magento-sample-data-1.9.1.0/media/* ./media/ ;\
+mysql -h ${MAGENTO_DB_HOST} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} < 'magento-sample-data-1.9.1.0/magento_sample_data_for_1.9.1.0.sql' ;\
+rm -fr compressed-no-mp3-magento-sample-data-1.9.1.0.tar compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z magento-sample-data-1.9.1.0
+
+# Install Magento
 
 php -f root/install.php -- \
 --license_agreement_accepted "yes" \
