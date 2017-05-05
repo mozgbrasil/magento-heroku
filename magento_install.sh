@@ -95,7 +95,13 @@ php -f install.php -- \
 --admin_username "admin" \
 --admin_password "123456a"
 
+# Permissões
+
+chmod 777 -R .
+
 # Magento /shell
+
+echo -e "--(Magento /shell)--" ;\
 
 echo -e "--(Processo 1)--" ;\
 php shell/compiler.php --state ;\
@@ -109,6 +115,8 @@ echo -e "--(Processo 5)--" ;\
 php shell/indexer.php --reindexall
 
 # Magento ./mage command-line
+
+echo -e "--(Magento ./mage)--" ;\
 
 echo -e "--(Processo 1)--" ;\
 ./mage ;\
