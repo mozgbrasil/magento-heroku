@@ -16,11 +16,13 @@ Clique abaixo para implantar esse APP na sua conta no Heroku
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-## Instalação automática do Magento
+Em seguida clique no botão "Deploy"
 
-Acesse a URL do seu DNS e em seguida informe
+Ao finalizar a implantação do aplicativo será exibido a mensagem "Your app was successfully deployed."
 
-/bootstrap.php
+Clique no botão "View"
+
+Será exibido o servidor 
 
 ## Comandos CLI
 

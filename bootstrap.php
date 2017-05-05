@@ -14,7 +14,7 @@ php bootstrap.php
 
 $base_url = 'http'.(isset($_SERVER['HTTPS'])?'s':'').'://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']);
 
-$base_url = "$base_url/root";
+$base_url = $base_url . 'root';
 
 $arg1 = $base_url;
 $arg2 = '2';
