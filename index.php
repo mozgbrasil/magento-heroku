@@ -31,7 +31,7 @@ if ( empty($_REQUEST) ){
 
     if( !file_exists($path_file) ){
     $html .= <<<EOF
-    <p><a href="bootstrap.php" target="_blank">Clique aqui para instalar o Magento</a></p>
+    <p><a href="magento_install.php" target="_blank">Clique aqui para instalar o Magento</a></p>
 EOF;
     }
 

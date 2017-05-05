@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1a2e140bddc7d43752d1b589a2dca76",
+    "content-hash": "46c2fd652f45b1b1ccb4794ce1b08041",
     "packages": [
         {
             "name": "aoepeople/aoe_scheduler",
@@ -467,6 +467,126 @@
             "time": "2017-02-23T13:23:06+00:00"
         },
         {
+            "name": "mozgbrasil/magento-brasil-regions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mozgbrasil/magento-brasil-regions.git",
+                "reference": "3443e4e552ec3e2dd039ce3cf2d63fba60ffacf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mozgbrasil/magento-brasil-regions/zipball/3443e4e552ec3e2dd039ce3cf2d63fba60ffacf4",
+                "reference": "3443e4e552ec3e2dd039ce3cf2d63fba60ffacf4",
+                "shasum": ""
+            },
+            "require": {
+                "magento-hackathon/magento-composer-installer": "*"
+            },
+            "type": "magento-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Marcio dos Santos Amorim",
+                    "email": "suporte@mozg.com.br",
+                    "homepage": "http://mozg.com.br",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adiciona o suporte aos 27 estados do Brasil ao Magento",
+            "homepage": "http://mozg.com.br",
+            "keywords": [
+                "brasil",
+                "cerebrum",
+                "mozg",
+                "regions"
+            ],
+            "time": "2017-04-26 21:29:19"
+        },
+        {
+            "name": "mozgbrasil/magento-iwd-all",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mozgbrasil/magento-iwd-all.git",
+                "reference": "9d406aca5f59db9bc5c012ed1f9db1e8939a3af4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mozgbrasil/magento-iwd-all/zipball/9d406aca5f59db9bc5c012ed1f9db1e8939a3af4",
+                "reference": "9d406aca5f59db9bc5c012ed1f9db1e8939a3af4",
+                "shasum": ""
+            },
+            "type": "magento-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Marcio dos Santos Amorim",
+                    "email": "suporte@mozg.com.br",
+                    "homepage": "http://mozg.com.br",
+                    "role": "Developer"
+                }
+            ],
+            "description": "IWD_All",
+            "homepage": "http://mozg.com.br",
+            "keywords": [
+                "all",
+                "cerebrum",
+                "iwd",
+                "magento",
+                "mozg"
+            ],
+            "time": "2017-04-26 21:29:35"
+        },
+        {
+            "name": "mozgbrasil/magento-iwd-opc",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mozgbrasil/magento-iwd-opc.git",
+                "reference": "39ceabf5e71d6650a5004fba062f609e740d6ac2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mozgbrasil/magento-iwd-opc/zipball/39ceabf5e71d6650a5004fba062f609e740d6ac2",
+                "reference": "39ceabf5e71d6650a5004fba062f609e740d6ac2",
+                "shasum": ""
+            },
+            "require": {
+                "mozgbrasil/magento-iwd-all": "dev-master"
+            },
+            "type": "magento-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Marcio dos Santos Amorim",
+                    "email": "suporte@mozg.com.br",
+                    "homepage": "http://mozg.com.br",
+                    "role": "Developer"
+                }
+            ],
+            "description": "IWD_Opc",
+            "homepage": "http://mozg.com.br",
+            "keywords": [
+                "cerebrum",
+                "checkout",
+                "iwd",
+                "magento",
+                "mozg",
+                "opc"
+            ],
+            "time": "2017-04-26 21:29:43"
+        },
+        {
             "name": "psr/log",
             "version": "1.0.2",
             "source": {
@@ -764,7 +884,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "mozgbrasil/magento-iwd-opc": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

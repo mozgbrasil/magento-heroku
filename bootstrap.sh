@@ -12,8 +12,6 @@
 
 #
 
-MAGENTO_URL="$1"
-
 REGEX_EXPR='postgres:\/\/(.+):(.+)@(.+)(:5432| )\/(.+)'
 #$DATABASE_URL # PostgreSQL
 
@@ -48,73 +46,55 @@ fi
 
 #
 
+echo -e "--(Start)--" ;\
+
+#
+
+WICH_7ZA=`which 7za`
+WICH_TAR=`which tar`
+
+echo $WICH_7ZA
+echo $WICH_TAR
+
+#
+
 cd root
+
+echo -e "--(`pwd`)--" ;\
 
 # Sample Data
 
+echo -e "--(Sample Data)--" ;\
+
+echo -e "--(Processo 1)--" ;\
+
 wget https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/1.9.1.0/compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z ;\
+
+echo -e "--(Processo 2)--" ;\
+
 7za x compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z ;\
+
+echo -e "--(Processo 3)--" ;\
+
 tar -xvf compressed-no-mp3-magento-sample-data-1.9.1.0.tar ;\
-cp -ri magento-sample-data-1.9.1.0/media/* media/ ;\
+
+echo -e "--(Processo 4)--" ;\
+
+cp -fri magento-sample-data-1.9.1.0/media/* media/ ;\
+
+echo -e "--(Processo 5)--" ;\
+
 mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} < 'magento-sample-data-1.9.1.0/magento_sample_data_for_1.9.1.0.sql' ;\
+
+echo -e "--(Processo 6)--" ;\
+
 rm -fr compressed-no-mp3-magento-sample-data-1.9.1.0.tar compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z magento-sample-data-1.9.1.0
 
 # Check Database
 
+echo -e "--(Check Database)--" ;\
+
 mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -Nse "SHOW TABLES"
-
-# Install Magento
-
-php -f install.php -- \
---license_agreement_accepted "yes" \
---locale "pt_BR" \
---timezone "America/Sao_Paulo" \
---default_currency "BRL" \
---db_host "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" \
---db_name ${MAGENTO_DB_NAME} \
---db_user ${MAGENTO_DB_USER} \
---db_pass ${MAGENTO_DB_PASS} \
---url $MAGENTO_URL \
---skip_url_validation "yes" \
---use_rewrites "yes" \
---use_secure "no" \
---secure_base_url "" \
---use_secure_admin "no" \
---admin_firstname "Magento" \
---admin_lastname "User" \
---admin_email "user@example.com" \
---admin_username "admin" \
---admin_password "123456a"
-
-# Permissões
-
-    chmod 777 -R .
-
-# Magento /shell
-
-    echo -e "\e[1;33m --(Processo 1)-- \e[0m" ;\
-    php shell/compiler.php --state ;\
-    echo -e "\e[1;33m --(Processo 2)-- \e[0m" ;\
-    php shell/log.php --clean ;\
-    echo -e "\e[1;33m --(Processo 3)-- \e[0m" ;\
-    php shell/indexer.php --status ;\
-    echo -e "\e[1;33m --(Processo 4)-- \e[0m" ;\
-    php shell/indexer.php --info ;\
-    echo -e "\e[1;33m --(Processo 5)-- \e[0m" ;\
-    php shell/indexer.php --reindexall
-
-# Magento ./mage command-line
-
-    echo -e "\e[1;33m --(Processo 1)-- \e[0m" ;\
-    ./mage ;\
-    echo -e "\e[1;33m --(Processo 2)-- \e[0m" ;\
-    ./mage mage-setup ;\
-    echo -e "\e[1;33m --(Processo 3)-- \e[0m" ;\
-    ./mage sync ;\
-    echo -e "\e[1;33m --(Processo 4)-- \e[0m" ;\
-    ./mage list-installed ;\
-    echo -e "\e[1;33m --(Processo 5)-- \e[0m" ;\
-    ./mage list-upgrades ;\
 
 #
 
