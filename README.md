@@ -22,7 +22,7 @@ Ao finalizar a implantação do aplicativo será exibido a mensagem "Your app wa
 
 Clique no botão "View"
 
-Será exibido o servidor 
+Será carregado o aplicativo, com o acesso ao Magento 
 
 ## Comandos CLI
 
