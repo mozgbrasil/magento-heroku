@@ -8,15 +8,11 @@
 
 ## Sinopse
 
-Automação de aplicativo
-
-## Motivação
-
-Criação de projeto(s) Magento
+Automação para criação de projeto Magento para o Heroku
 
 ## Implantando no Heroku
 
-Clique abaixo para implantar esse APP no Heroku
+Clique abaixo para implantar esse APP na sua conta no Heroku
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 

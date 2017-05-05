@@ -116,10 +116,21 @@ if ( array_key_exists('database', $_REQUEST) ){
         dump("Connection failed: " . $conn->connect_error);
     }       
 
-    $sql = "show tables";
+    $sql = "SHOW tables";
     $result = $conn->query($sql);
 
     dump($result);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            dump($row);
+        }
+    } else {
+        echo "0 results";
+    }
+
+    $conn->close();
 
     //
 
@@ -145,17 +156,10 @@ if ( array_key_exists('database', $_REQUEST) ){
         dump("Connection failed: " . $conn->connect_error);
     }       
 
-    $sql = "show tables";
+    $sql = "SHOW tables";
     $result = $conn->query($sql);
 
     dump($result);
-
-    //
-
-
-    /*
-
-
 
     if ($result->num_rows > 0) {
         // output data of each row
@@ -168,7 +172,8 @@ if ( array_key_exists('database', $_REQUEST) ){
 
     $conn->close();
 
-    */
+    //
+
 }
 
 //

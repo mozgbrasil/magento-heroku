@@ -9,7 +9,6 @@
 # https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
 
 printenv
-printenv >> mozg_log.txt
 
 #
 
@@ -52,23 +51,23 @@ fi
 
 #
 
-php -f root/install.php -- \
---license_agreement_accepted "yes" \
---locale "pt_BR" \
---timezone "America/Sao_Paulo" \
---default_currency "BRL" \
---db_host ${MAGENTO_DB_HOST} \
---db_name ${MAGENTO_DB_NAME} \
---db_user ${MAGENTO_DB_USER} \
---db_pass ${MAGENTO_DB_PASS} \
---url $MAGENTO_URL \
---skip_url_validation "yes" \
---use_rewrites "yes" \
---use_secure "no" \
---secure_base_url "" \
---use_secure_admin "no" \
---admin_firstname "Magento" \
---admin_lastname "User" \
---admin_email "user@example.com" \
---admin_username "admin" \
---admin_password "123456a"
+#php -f root/install.php -- \
+#--license_agreement_accepted "yes" \
+#--locale "pt_BR" \
+#--timezone "America/Sao_Paulo" \
+#--default_currency "BRL" \
+#--db_host ${MAGENTO_DB_HOST} \
+#--db_name ${MAGENTO_DB_NAME} \
+#--db_user ${MAGENTO_DB_USER} \
+#--db_pass ${MAGENTO_DB_PASS} \
+#--url $MAGENTO_URL \
+#--skip_url_validation "yes" \
+#--use_rewrites "yes" \
+#--use_secure "no" \
+#--secure_base_url "" \
+#--use_secure_admin "no" \
+#--admin_firstname "Magento" \
+#--admin_lastname "User" \
+#--admin_email "user@example.com" \
+#--admin_username "admin" \
+#--admin_password "123456a"
