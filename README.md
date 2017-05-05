@@ -26,6 +26,8 @@ composer update --ignore-platform-reqs
 
 heroku logs --app magento-heroku --tail
 
+--
+
 heroku --version
 
 heroku
