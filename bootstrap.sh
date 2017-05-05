@@ -18,11 +18,15 @@ printenv >> mozg_log.txt
 
 #
 
-MAGENTO_URL='http://magento-heroku.herokuapp.com/root/'
+MAGENTO_URL=''
 
 REGEX_EXPR='mysql:\/\/(.+):(.+)@(.+)(:3306| )\/(.+)'
+$STRING=$JAWSDB_URL # MySQL
 
-if [[ $JAWSDB_URL =~ $REGEX_EXPR ]]
+REGEX_EXPR='postgres:\/\/(.+):(.+)@(.+)(:5432| )\/(.+)'
+$STRING=$DATABASE_URL # PostgreSQL
+
+if [[ $STRING =~ $REGEX_EXPR ]]
 then
     echo The regex matches!
     echo $BASH_REMATCH      
@@ -31,28 +35,20 @@ then
     echo ${BASH_REMATCH[3]} 
     echo ${BASH_REMATCH[4]} 
     echo ${BASH_REMATCH[5]}
+
+    MAGENTO_DB_HOST=${BASH_REMATCH[3]}
+    MAGENTO_DB_NAME=${BASH_REMATCH[5]}
+    MAGENTO_DB_USER=${BASH_REMATCH[1]}
+    MAGENTO_DB_PASS=${BASH_REMATCH[2]}
+
+    echo "${MAGENTO_URL}"
+    echo "${MAGENTO_DB_HOST}"
+    echo "${MAGENTO_DB_NAME}"
+    echo "${MAGENTO_DB_USER}"
+    echo "${MAGENTO_DB_PASS}"
+else
+    echo "Unable to parse JAWSDB_URL from config"
 fi
-
-MAGENTO_DB_HOST=${BASH_REMATCH[3]}
-MAGENTO_DB_NAME=${BASH_REMATCH[5]}
-MAGENTO_DB_USER=${BASH_REMATCH[1]}
-MAGENTO_DB_PASS=${BASH_REMATCH[2]}
-
-echo "${HEROKU_APP}"
-echo "${MAGENTO_URL}"
-echo "${MAGENTO_DB_HOST}"
-echo "${MAGENTO_DB_NAME}"
-echo "${MAGENTO_DB_USER}"
-echo "${MAGENTO_DB_PASS}"
-
-#if [[ "${JAWSDB_URL}" =~ PATTERN ]]; then
-#  dbUser=${BASH_REMATCH[2]}
-#  dbPass=${BASH_REMATCH[3]}
-#  dbHost=${BASH_REMATCH[4]}
-#  dbName=${BASH_REMATCH[5]}
-#else
-#  echo "Unable to parse JAWSDB_URL from config"
-#fi
 
 #
 

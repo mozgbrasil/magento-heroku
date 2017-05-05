@@ -17,16 +17,6 @@
     "SECRET_TOKEN": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
-    },
-    "URL": {
-      "description": "Magento URL",
-      "value": "http://..."
-    },
-    "MAGENTO_USERNAME": {
-        "description": "Magento Backend UserName"
-    },
-    "MAGENTO_PASSWORD": {
-        "description": "Magento Backend PassWord"
     }
   },
   "image": "heroku/php",
