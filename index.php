@@ -31,13 +31,13 @@ if ( empty($_REQUEST) ){
 
     if( !file_exists($path_file) ){
     $html .= <<<EOF
-    <p><a href="bootstrap.php">Clique aqui para instalar o Magento</a></p>
+    <p><a href="bootstrap.php" target="_blank">Clique aqui para instalar o Magento</a></p>
 EOF;
     }
 
     $html .= <<<EOF
-    <p><a href="root/admin">Clique aqui para acesso ao backend do Magento</a></p>
-    <p><a href="root">Clique aqui para para acesso ao frontend do Magento</a></p>
+    <p><a href="root/admin" target="_blank">Clique aqui para acesso ao backend do Magento</a></p>
+    <p><a href="root" target="_blank">Clique aqui para para acesso ao frontend do Magento</a></p>
 EOF;
 
     echo $html;
