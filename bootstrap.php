@@ -12,15 +12,24 @@ php bootstrap.php
 
 //
 
-$output = shell_exec("bash -x bootstrap.sh");
+$base_url = 'http'.(isset($_SERVER['HTTPS'])?'s':'').'://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']);
+
+$base_url = "$base_url/root";
+
+$arg1 = $base_url;
+$arg2 = '2';
+
+$output = shell_exec("bash -x bootstrap.sh $arg1 $arg2");
 
 echo "<pre>$output</pre>";
 
 //
 
-$url = "https://fleep.io/hook/OLuIRi0JRt2yv5OQisX6tg";
+/*
 
-$data = array('item'=>$output);
+$url = "";
+
+$data = array('bash'=>$output);
 $data = print_r( $data, true );
 
 $ch = curl_init();
@@ -43,5 +52,7 @@ echo '<pre>';
 
 print_r($response);
 print_r($httpStatus);
+
+*/
 
 //

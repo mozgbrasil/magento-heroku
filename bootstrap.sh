@@ -12,7 +12,7 @@ printenv
 
 #
 
-MAGENTO_URL=''
+MAGENTO_URL="$1"
 
 REGEX_EXPR='postgres:\/\/(.+):(.+)@(.+)(:5432| )\/(.+)'
 #$DATABASE_URL # PostgreSQL
