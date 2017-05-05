@@ -54,9 +54,11 @@ echo -e "--(Start)--" ;\
 
 WICH_7ZA=`which 7za`
 WICH_TAR=`which tar`
+WICH_MYSQL=`which mysql`
 
-echo $WICH_7ZA
-echo $WICH_TAR
+echo -e "--( ${WICH_7ZA} )--" ;\
+echo -e "--( ${WICH_TAR} )--" ;\
+echo -e "--( ${WICH_MYSQL} )--" ;\
 
 #
 
@@ -94,6 +96,10 @@ php -f install.php -- \
 --admin_email "user@example.com" \
 --admin_username "admin" \
 --admin_password "123456a"
+
+# ls
+
+ls -all
 
 # Permissões
 

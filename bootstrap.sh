@@ -52,9 +52,11 @@ echo -e "--(Start)--" ;\
 
 WICH_7ZA=`which 7za`
 WICH_TAR=`which tar`
+WICH_MYSQL=`which mysql`
 
-echo $WICH_7ZA
-echo $WICH_TAR
+echo -e "--( ${WICH_7ZA} )--" ;\
+echo -e "--( ${WICH_TAR} )--" ;\
+echo -e "--( ${WICH_MYSQL} )--" ;\
 
 #
 
@@ -68,15 +70,11 @@ echo -e "--(Sample Data)--" ;\
 
 echo -e "--(Processo 1)--" ;\
 
-wget https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/1.9.1.0/compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z ;\
-
-echo -e "--(Processo 2)--" ;\
-
-7za x compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z ;\
+wget https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/1.9.1.0/compressed-no-mp3-magento-sample-data-1.9.1.0.tgz ;\
 
 echo -e "--(Processo 3)--" ;\
 
-tar -xvf compressed-no-mp3-magento-sample-data-1.9.1.0.tar ;\
+tar xvzf compressed-no-mp3-magento-sample-data-1.9.1.0.tgz ;\
 
 echo -e "--(Processo 4)--" ;\
 
