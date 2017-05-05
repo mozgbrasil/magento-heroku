@@ -58,7 +58,7 @@ php -f root/install.php -- \
 --locale "pt_BR" \
 --timezone "America/Sao_Paulo" \
 --default_currency "BRL" \
---db_host "${MAGENTO_DB_HOST}:${MAGENTO_DB_PORT}" \
+--db_host "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" \
 --db_name ${MAGENTO_DB_NAME} \
 --db_user ${MAGENTO_DB_USER} \
 --db_pass ${MAGENTO_DB_PASS} \
