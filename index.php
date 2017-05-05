@@ -14,7 +14,7 @@ require 'vendor/autoload.php';
 
 http://magento-heroku.herokuapp.com/?server=true
 
-http://magento-heroku.herokuapp.com/?objects=true&database=true&scandir=true&load_file=true&dir=/app/root/var/report&file=/app/root/var/report/941131722661
+http://magento-heroku.herokuapp.com/?database=true
 
 http://magento-heroku.herokuapp.com/?scandir=true&load_file=true&dir=/app/root/var/report&file=/app/root/var/report/821626541659
 
@@ -92,9 +92,10 @@ if ( array_key_exists('objects', $_REQUEST) ){
 
 if ( array_key_exists('database', $_REQUEST) ){
 
+    //
+
     // Create connection
 
-    /*
     $mysql_database = parse_url(getenv("CLEARDB_DATABASE_URL")); 
     dump($mysql_database);
     $host = $mysql_database["host"];
@@ -107,25 +108,8 @@ if ( array_key_exists('database', $_REQUEST) ){
     } catch (Exception $e) {
         dump($e->getMessage());
     }
-    */
-
-    $postgresql_database = parse_url(getenv("DATABASE_URL"));
-    dump($postgresql_database);
-    $host = $postgresql_database["host"];
-    $port = $postgresql_database["port"];
-    $user = $postgresql_database["user"];
-    $pass = $postgresql_database["pass"];
-    $db = substr($postgresql_database["path"], 1);
-
-    try {
-        $conn = new pg_connect("host=$host port=$port dbname=$db user=$user password=$pass");
-    } catch (Exception $e) {
-        dump($e->getMessage());
-    }
 
     dump($conn);
-
-    /*
 
     // Check connection
     if ($conn->connect_error) {
@@ -136,6 +120,42 @@ if ( array_key_exists('database', $_REQUEST) ){
     $result = $conn->query($sql);
 
     dump($result);
+
+    //
+
+    // Create connection
+
+    $mysql_database = parse_url(getenv("JAWSDB_URL")); 
+    dump($mysql_database);
+    $host = $mysql_database["host"];
+    $user = $mysql_database["user"];
+    $pass = $mysql_database["pass"];
+    $db = substr($mysql_database["path"], 1);
+
+    try {
+        $conn = new mysqli($host, $user, $pass, $db);
+    } catch (Exception $e) {
+        dump($e->getMessage());
+    }
+
+    dump($conn);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }       
+
+    $sql = "show tables";
+    $result = $conn->query($sql);
+
+    dump($result);
+
+    //
+
+
+    /*
+
+
 
     if ($result->num_rows > 0) {
         // output data of each row
