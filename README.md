@@ -68,10 +68,6 @@ heroku run --app magento-heroku 'ls /app/vendor/heroku/heroku-buildpack-php/conf
 
 --
 
-
-
---
-
 ## Referencias
 
 https://www.heroku.com/
