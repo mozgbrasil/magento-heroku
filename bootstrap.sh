@@ -21,12 +21,12 @@ printenv >> mozg_log.txt
 MAGENTO_URL=''
 
 REGEX_EXPR='postgres:\/\/(.+):(.+)@(.+)(:5432| )\/(.+)'
-$STRING=$DATABASE_URL # PostgreSQL
+#$DATABASE_URL # PostgreSQL
 
 REGEX_EXPR='mysql:\/\/(.+):(.+)@(.+)(:3306| )\/(.+)'
-$STRING=$JAWSDB_URL # MySQL
+#$JAWSDB_URL # MySQL
 
-if [[ $STRING =~ $REGEX_EXPR ]]
+if [[ $JAWSDB_URL =~ $REGEX_EXPR ]]
 then
     echo The regex matches!
     echo $BASH_REMATCH      
@@ -47,7 +47,7 @@ then
     echo "${MAGENTO_DB_USER}"
     echo "${MAGENTO_DB_PASS}"
 else
-    echo "Unable to parse JAWSDB_URL from config"
+    echo "Unable to parse STRING from config"
 fi
 
 #

@@ -6,6 +6,14 @@
 
 # Magento\Heroku
 
+## Sinopse
+
+Automação de aplicativo
+
+## Motivação
+
+Criação de projeto(s) Magento
+
 ## Implantando no Heroku
 
 Clique abaixo para implantar esse APP no Heroku
