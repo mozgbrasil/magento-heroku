@@ -60,7 +60,7 @@ heroku releases --app magento-heroku
 
 heroku config --app magento-heroku
 
-heroku run --app magento-heroku 'which php ; composer --version ; php -v ; composer update'
+heroku run --app magento-heroku ' pwd ; ls -all /bin ; which php ; composer --version ; php -v ; composer update'
 
 heroku open --app magento-heroku
 
