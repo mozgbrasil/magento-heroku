@@ -24,7 +24,7 @@
     "cleardb",
     "semaphore",
     "codeship",
-    "jawsdb",
+    "jawsdb:leopard",
     "sendgrid",
     "heroku-postgresql"
   ],
