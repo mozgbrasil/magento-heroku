@@ -24,12 +24,19 @@ http://magento-heroku.herokuapp.com/?scandir=true&dir=/app/root/var/&load_file=t
 
 if ( empty($_REQUEST) ){
 
-        $html = <<<EOF
 
-        <p><a href="bootstrap.php">Clique aqui para instalar o Magento</a></p>
+    $path_file = __DIR__ . '/root/app/etc/local.xml';
 
-        <p><a href="root">Clique aqui para iniciar o Magento</a></p>
+    $html = '';
 
+    if( !file_exists($path_file) ){
+    $html .= <<<EOF
+    <p><a href="bootstrap.php">Clique aqui para instalar o Magento</a></p>
+EOF;
+    }
+
+    $html .= <<<EOF
+    <p><a href="root">Clique aqui para iniciar o Magento</a></p>
 EOF;
 
     echo $html;
