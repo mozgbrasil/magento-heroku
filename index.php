@@ -12,6 +12,8 @@ require 'vendor/autoload.php';
 
 /*
 
+http://magento-heroku.herokuapp.com/?server=true
+
 http://magento-heroku.herokuapp.com/?objects=true&database=true&scandir=true&load_file=true&dir=/app/root/var/report&file=/app/root/var/report/941131722661
 
 http://magento-heroku.herokuapp.com/?scandir=true&load_file=true&dir=/app/root/var/report&file=/app/root/var/report/821626541659
@@ -22,7 +24,7 @@ http://magento-heroku.herokuapp.com/?scandir=true&load_file=true&dir=/app/root/v
 
 if ( empty($_REQUEST) ){
 
-    dump($_REQUEST);
+    header('Location: root/');
 
 }
 

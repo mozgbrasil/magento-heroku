@@ -2,6 +2,8 @@
 
 #
 
+# bash bootstrap.sh
+
 #
 
 # https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
@@ -17,15 +19,26 @@ printenv >> mozg_log.txt
 #
 
 MAGENTO_URL='http://magento-heroku.herokuapp.com/root/'
-QUERY_STRING=`${JAWSDB_URL} | cat $1 | sed -E 's%mysql:\/\/(.*)(.*):(.*)@(.*)(:\d+|.*)(.*)\/%user=\1;password=\3;host=\4;db=\2%'`
-eval `echo "${QUERY_STRING}"|tr '&' ';'`
 
-MAGENTO_DB_HOST=${host}
-MAGENTO_DB_NAME=${db}
-MAGENTO_DB_USER=${user}
-MAGENTO_DB_PASS=${password}
+REGEX_EXPR='mysql:\/\/(.+):(.+)@(.+)(:3306| )\/(.+)'
 
-echo ${HEROKU_APP}
+if [[ $JAWSDB_URL =~ $REGEX_EXPR ]]
+then
+    echo The regex matches!
+    echo $BASH_REMATCH      
+    echo ${BASH_REMATCH[1]} 
+    echo ${BASH_REMATCH[2]}
+    echo ${BASH_REMATCH[3]} 
+    echo ${BASH_REMATCH[4]} 
+    echo ${BASH_REMATCH[5]}
+fi
+
+MAGENTO_DB_HOST=${BASH_REMATCH[3]}
+MAGENTO_DB_NAME=${BASH_REMATCH[5]}
+MAGENTO_DB_USER=${BASH_REMATCH[1]}
+MAGENTO_DB_PASS=${BASH_REMATCH[2]}
+
+echo "${HEROKU_APP}"
 echo "${MAGENTO_URL}"
 echo "${MAGENTO_DB_HOST}"
 echo "${MAGENTO_DB_NAME}"
