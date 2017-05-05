@@ -2,18 +2,13 @@
 
 #
 
-# bash bootstrap.sh
+# bash -x bootstrap.sh
 
 #
 
 # https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
 
 printenv
-
-#
-
-#$(composer config -a http-basic.repo.magento.com ${MAGENTO_USERNAME} ${MAGENTO_PASSWORD})
-#$(composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition vendor/magento)
 
 #
 
@@ -78,4 +73,6 @@ php -f root/install.php -- \
 
 echo 'Fim'
 
-exit
+#
+
+exec $@

@@ -2,6 +2,7 @@
   "name": "mozgbrasil/magento-heroku",
   "description": "Magento App",
   "keywords": [
+    "app.json",
     "magento",
     "heroku",
     "mozg"
@@ -11,7 +12,7 @@
   "logo": "http://mozg.com.br/assets/images/logos/Red_star.svg",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "echo 'eu em app.json 1'; bash bootstrap.sh;"
+    "postdeploy": "echo 'eu em app.json 1' ; bash -x bootstrap.sh ;"
   },
   "env": {
     "SECRET_TOKEN": {
