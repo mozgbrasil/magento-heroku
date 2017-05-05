@@ -36,7 +36,8 @@ EOF;
     }
 
     $html .= <<<EOF
-    <p><a href="root">Clique aqui para iniciar o Magento</a></p>
+    <p><a href="root/admin">Clique aqui para acesso ao backend do Magento</a></p>
+    <p><a href="root">Clique aqui para para acesso ao frontend do Magento</a></p>
 EOF;
 
     echo $html;
