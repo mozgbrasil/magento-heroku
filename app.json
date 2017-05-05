@@ -12,7 +12,7 @@
   "logo": "http://mozg.com.br/assets/images/logos/Red_star.svg",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "echo 'eu em app.json 1' ; php bootstrap.php ;"
+    "postdeploy": "echo 'eu em app.json 1' ; bash bootstrap.sh ;"
   },
   "env": {
     "SECRET_TOKEN": {
