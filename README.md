@@ -22,11 +22,11 @@ Como o Heroku trabalha sobre o [Composer](https://getcomposer.org/), todas as de
 
 Olá
 
-Tenha sua loja virtual usando a plataforma Magento em apenas 1 clique, por apenas $10.00 que é o custo para uso do banco de dados na Heroku
+Tenha sua loja virtual usando a plataforma [Magento](https://magento.com/) em apenas 1 clique, por apenas $10.00 que é o custo para uso do banco de dados na [Heroku](https://www.heroku.com/)
 
-## Implantando no Heroku
+## Implantando na Heroku
 
-Clique abaixo para implantar o aplicativo na sua conta no Heroku
+Clique abaixo para implantar o aplicativo na sua conta na [Heroku](https://www.heroku.com/)
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mozgbrasil/magento-heroku)
 
