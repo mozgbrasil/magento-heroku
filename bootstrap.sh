@@ -78,7 +78,7 @@ tar xvzf compressed-no-mp3-magento-sample-data-1.9.1.0.tgz ;\
 
 echo -e "--(Processo 4)--" ;\
 
-cp -fri magento-sample-data-1.9.1.0/media/* media/ ;\
+cp -fr magento-sample-data-1.9.1.0/media/* media/ ;\
 
 echo -e "--(Processo 5)--" ;\
 
@@ -92,79 +92,12 @@ rm -fr compressed-no-mp3-magento-sample-data-1.9.1.0.tar compressed-no-mp3-magen
 
 echo -e "--(Check Database)--" ;\
 
-mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -Nse "SHOW TABLES"
+mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -e "SHOW TABLES"
 
 #
 
 #curl --request POST https://fleep.io/hook/OLuIRi0JRt2yv5OQisX6tg --data '{"MerchantOrderId":"2014111703"}' --verbose
 
 #
-
-# Install Magento
-
-echo -e "--(Install Magento)--" ;\
-
-php -f install.php -- \
---license_agreement_accepted "yes" \
---locale "pt_BR" \
---timezone "America/Sao_Paulo" \
---default_currency "BRL" \
---db_host "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" \
---db_name ${MAGENTO_DB_NAME} \
---db_user ${MAGENTO_DB_USER} \
---db_pass ${MAGENTO_DB_PASS} \
---url $MAGENTO_URL \
---skip_url_validation "yes" \
---use_rewrites "yes" \
---use_secure "no" \
---secure_base_url "" \
---use_secure_admin "no" \
---admin_firstname "Magento" \
---admin_lastname "User" \
---admin_email "user@example.com" \
---admin_username "admin" \
---admin_password "123456a"
-
-# ls
-
-ls -all
-
-# Permissões
-
-chmod 777 -R .
-
-# Magento /shell
-
-echo -e "--(Magento /shell)--" ;\
-
-echo -e "--(Processo 1)--" ;\
-php shell/compiler.php --state ;\
-echo -e "--(Processo 2)--" ;\
-php shell/log.php --clean ;\
-echo -e "--(Processo 3)--" ;\
-php shell/indexer.php --status ;\
-echo -e "--(Processo 4)--" ;\
-php shell/indexer.php --info ;\
-echo -e "--(Processo 5)--" ;\
-php shell/indexer.php --reindexall
-
-# Magento ./mage command-line
-
-echo -e "--(Magento ./mage)--" ;\
-
-echo -e "--(Processo 1)--" ;\
-./mage ;\
-echo -e "--(Processo 2)--" ;\
-./mage mage-setup ;\
-echo -e "--(Processo 3)--" ;\
-./mage sync ;\
-echo -e "--(Processo 4)--" ;\
-./mage list-installed ;\
-echo -e "--(Processo 5)--" ;\
-./mage list-upgrades ;\
-
-#
-
-exec $@
 
 #
