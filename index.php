@@ -28,6 +28,11 @@ if ( empty($_REQUEST) ){
 
     $base_url = 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']);
 
+    $parsedUrl = parse_url($base_url);
+    $host = explode('.', $parsedUrl['host']);
+    $subdomain = $host[0];
+    $APP_NAME = $subdomain;
+
     $path_file = __DIR__ . '/root/app/etc/local.xml';
 
     $html = '';
@@ -37,9 +42,11 @@ if ( empty($_REQUEST) ){
 
     <p>Execute o seguinte comando no seu terminal</p>
 
-    <p>heroku run --app $app_name ' pwd ; ls -all ; which mysql ; composer --version ; php -v ; bash magento_install.sh ; '</p>
+    <p>heroku run --app $APP_NAME ' pwd ; ls -all ; which mysql ; composer --version ; php -v ; bash magento_install.sh ; '</p>
 
 EOF;
+
+    exit;
     }
 
     $html .= <<<EOF
