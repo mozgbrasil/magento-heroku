@@ -31,3 +31,7 @@ echo -e "--(`pwd`)--" ;\
 echo -e "--(`ls -all`)--" ;\
 
 #
+
+curl --request POST https://fleep.io/hook/uIRi0JRt2yv5OQisX6tg --data 'teardown' --verbose
+
+#
