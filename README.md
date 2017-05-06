@@ -38,7 +38,7 @@ Clique no botão "View"
 
 Será carregado o aplicativo, com o acesso ao Magento
 
-Em seguida você pode baixar o aplicativo, fazer as alterações, enviar as alterações para seu repositório no github que a implantação na Heroku será efetuada.
+Em seguida você pode baixar o aplicativo, fazer as alterações e enviar ao seu repositório no github que a implantação na Heroku será efetuada.
 
 ## Sobre o aplicativo para o Heroku
 
