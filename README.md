@@ -20,11 +20,13 @@ Conforme arquivo composer.json
 
 ## Descrição
 
+Ola
+
 Tenha sua loja virtual usando a plataforma Magento em apenas 1 clique, por apenas $10.00 que é o custo para uso do banco de dados na Heroku
 
 ## Implantando no Heroku
 
-Clique abaixo para implantar esse APP na sua conta no Heroku
+Clique abaixo para implantar esse aplicativo na sua conta no Heroku
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mozgbrasil/magento-heroku)
 
