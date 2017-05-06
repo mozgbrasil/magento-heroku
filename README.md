@@ -68,6 +68,8 @@ heroku run --app magento-heroku ' pwd ; ls -all /bin ; which php ; composer --ve
 
 heroku run --app magento-heroku ' pwd ; ls -all '
 
+heroku run --app magento-heroku ' bash magento_install.sh ; '
+
 heroku open --app magento-heroku
 
 --

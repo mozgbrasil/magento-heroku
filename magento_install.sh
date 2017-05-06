@@ -23,7 +23,7 @@ echo -e "--(REGEX_EXPR)--" ;\
 REGEX_EXPR='postgres:\/\/(.+):(.+)@(.+)(:5432| )\/(.+)'
 #$DATABASE_URL # PostgreSQL
 
-REGEX_EXPR='mysql:\/\/(.+):(.+)@(.+)(:3306| )\/(.+)'
+REGEX_EXPR='mysql:\/\/(.+):(.+)@(.+):(3306| )\/(.+)'
 #$JAWSDB_URL # MySQL
 
 if [[ $JAWSDB_URL =~ $REGEX_EXPR ]]
@@ -53,7 +53,7 @@ then
 
     echo -e "--(Check Database)--" ;\
 
-    mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u "${MAGENTO_DB_USER}" -p"${MAGENTO_DB_PASS}" "${MAGENTO_DB_NAME}" -e "SHOW TABLES"
+    mysql -h "${MAGENTO_DB_HOST}" -p "${MAGENTO_DB_PORT}" -u "${MAGENTO_DB_USER}" -p"${MAGENTO_DB_PASS}" "${MAGENTO_DB_NAME}" -e "SHOW TABLES"
 
 else
     echo -e "--(Unable to parse STRING from config)--" ;\
@@ -102,7 +102,7 @@ cp -fr magento-sample-data-1.9.1.0/media/* media/ ;\
 
 echo -e "--(Processo 5)--" ;\
 
-mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u "${MAGENTO_DB_USER}" -p"${MAGENTO_DB_PASS}" "${MAGENTO_DB_NAME}" < 'magento-sample-data-1.9.1.0/magento_sample_data_for_1.9.1.0.sql' ;\
+mysql -h "${MAGENTO_DB_HOST}" -p "${MAGENTO_DB_PORT}" -u "${MAGENTO_DB_USER}" -p"${MAGENTO_DB_PASS}" "${MAGENTO_DB_NAME}" < 'magento-sample-data-1.9.1.0/magento_sample_data_for_1.9.1.0.sql' ;\
 
 echo -e "--(Processo 6)--" ;\
 
@@ -117,7 +117,7 @@ php -f install.php -- \
 --locale "pt_BR" \
 --timezone "America/Sao_Paulo" \
 --default_currency "BRL" \
---db_host "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" \
+--db_host "${MAGENTO_DB_HOST}:${MAGENTO_DB_PORT}" \
 --db_name ${MAGENTO_DB_NAME} \
 --db_user ${MAGENTO_DB_USER} \
 --db_pass ${MAGENTO_DB_PASS} \
