@@ -37,7 +37,7 @@
       "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
     },
     {
-      "url": "https://github.com/Shopify/heroku-buildpack-mysql"
+      "url": "https://github.com/gaumire/heroku-buildpack-mysql"
     }
   ],
   "environments": {
