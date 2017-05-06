@@ -45,7 +45,9 @@ if ( empty($_REQUEST) ){
     if( !file_exists($path_file) ){
         $html .= <<<EOF
 
-        <p><b>Execute o seguinte comando no seu terminal, para auto instalar o Magento com o sample data e módulos recomendado</b></p>
+        <p><b>Execute o processo, para auto instalar o Magento com o sample data</b></p>
+
+        <p><b>Obs. a execução do arquivo *.sh, não armazena o sample data, nem instala o Magento, por isso da execução via php WEB</b></p>
 
         <!--<p>heroku run --app $APP_NAME ' printenv ; bash magento_install.sh ; printenv ; '</p>-->
 
