@@ -16,7 +16,7 @@ Evangelizar a plataforma Magento
 
 ## Característica técnica
 
-Conforme arquivo composer.json
+Conforme arquivo [composer.json](composer.json)
 
 ## Descrição
 
