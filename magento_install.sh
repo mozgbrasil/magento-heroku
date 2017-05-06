@@ -18,7 +18,8 @@ printenv
 
 echo -e "--(REGEX_EXPR)--" ;\
 
-MAGENTO_URL="http://magento-heroku.herokuapp.com/"
+#MAGENTO_URL="http://magento-heroku.herokuapp.com/"
+MAGENTO_URL="$1"
 
 # https://regex101.com/r/EeO9HR/2
 

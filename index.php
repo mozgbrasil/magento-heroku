@@ -47,7 +47,9 @@ if ( empty($_REQUEST) ){
 
         <p><b>Execute o seguinte comando no seu terminal, para auto instalar o Magento com o sample data e módulos recomendado</b></p>
 
-        <p>heroku run --app $APP_NAME ' printenv ; bash magento_install.sh ; printenv ; '</p>
+        <!--<p>heroku run --app $APP_NAME ' printenv ; bash magento_install.sh ; printenv ; '</p>-->
+
+        <p><a href="$BASE_URL/magento_install.php" target="_blank">Clique aqui para auto instalar o Magento com o sample data</a></p>
 
         <p><b>Em seguida recarregue essa página</b></p>
 
