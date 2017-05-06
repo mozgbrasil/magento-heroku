@@ -33,10 +33,12 @@ if ( empty($_REQUEST) ){
     define("BASE_URL", $BASE_URL);
     define("MAGENTO_URL", $MAGENTO_URL);
 
-    $parsedUrl = parse_url($base_url);
-    $host = explode('.', $parsedUrl['host']);
+    $parsed_url = parse_url($base_url);
+    $host = explode('.', $parsed_url['host']);
     $subdomain = $host[0];
     $APP_NAME = $subdomain;
+
+    dump($parsed_url);
 
     $path_file = __DIR__ . '/root/app/etc/local.xml';
 
@@ -45,9 +47,11 @@ if ( empty($_REQUEST) ){
     if( !file_exists($path_file) ){
         $html .= <<<EOF
 
-        <p>Execute o seguinte comando no seu terminal</p>
+        <p><b>Execute o seguinte comando no seu terminal</b></p>
 
         <p>heroku run --app $APP_NAME ' pwd ; ls -all ; which mysql ; composer --version ; php -v ; bash magento_install.sh ; '</p>
+
+        <p><b>Em seguida recarregue essa página</b></p>
 
 EOF;
 

@@ -20,6 +20,8 @@ echo -e "--(REGEX_EXPR)--" ;\
 
 #MAGENTO_URL="$1"
 
+# https://regex101.com/r/EeO9HR/2
+
 REGEX_EXPR='postgres:\/\/(.+):(.+)@(.+):(5432| )\/(.+)'
 #$DATABASE_URL # PostgreSQL
 
