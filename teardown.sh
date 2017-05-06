@@ -2,6 +2,11 @@
 
 #
 
+# Copyright © 2017 Mozg. All rights reserved.
+# See LICENSE.txt for license details.
+
+#
+
 # https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
 
 printenv

@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright © 2017 Mozg. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
 
 //
 
@@ -45,13 +49,19 @@ if ( empty($_REQUEST) ){
     if( !file_exists($path_file) ){
         $html .= <<<EOF
 
-        <p><b>Execute o processo, para auto instalar o Magento com o sample data</b></p>
+        <p><b>Execute o comando para a visualização dos logs da APP e clique no link para auto instalar o Magento com o sample data</b></p>
 
-        <p><b>Obs. a execução do arquivo *.sh, não armazena o sample data, nem instala o Magento, por isso da execução via php WEB</b></p>
+        <p><b>Obs.</b> a execução do arquivo *.sh, não armazena o sample data, nem instala o Magento, por isso da execução via php WEB</p>
+
+        <p>heroku logs --app $APP_NAME --tail</p>
 
         <!--<p>heroku run --app $APP_NAME ' printenv ; bash magento_install.sh ; printenv ; '</p>-->
 
-        <p><a href="$BASE_URL/magento_install.php" target="_blank">Clique aqui para auto instalar o Magento com o sample data</a></p>
+        <p><a href="${BASE_URL}magento_install.php" target="_blank">Clique aqui para auto instalar o Magento com o sample data</a></p>
+
+        <p><b>Obs:</b> Pode ocorrer o seguinte erro https://devcenter.heroku.com/articles/error-codes#h12-request-timeout</p>
+
+        <p>Apenas acesse as URLs abaixo relativa ao Magento</p>
 
         <p><b>Em seguida recarregue essa página</b></p>
 
@@ -63,9 +73,9 @@ EOF;
 
     $html .= <<<EOF
 
-    <p><a href="$BASE_URL/root/admin" target="_blank">Clique aqui para acesso ao backend do Magento</a></p>
+    <p><a href="${BASE_URL}root/admin" target="_blank">Clique aqui para acesso ao backend do Magento</a></p>
 
-    <p><a href="$BASE_URL/root" target="_blank">Clique aqui para para acesso ao frontend do Magento</a></p>
+    <p><a href="${BASE_URL}root" target="_blank">Clique aqui para para acesso ao frontend do Magento</a></p>
 
 EOF;
 

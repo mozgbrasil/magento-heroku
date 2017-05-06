@@ -2,6 +2,11 @@
 
 #
 
+# Copyright © 2017 Mozg. All rights reserved.
+# See LICENSE.txt for license details.
+
+#
+
 # No app.json em postdeploy, não é criado a pasta root do Magento, sendo necessário a execução manual desse arquivo após o Deploy
 
 # bash -x bootstrap.sh
@@ -54,9 +59,9 @@ then
 
     # Check Database
 
-    echo -e "--(Check Database)--" ;\
+    #echo -e "--(Check Database)--" ;\
 
-    mysql -h ${MAGENTO_DB_HOST} -P ${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -v -e "SHOW TABLES"
+    #mysql -h ${MAGENTO_DB_HOST} -P ${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -v -e "SHOW TABLES"
 
 else
     echo -e "--(Unable to parse STRING from config)--" ;\
@@ -140,18 +145,18 @@ php -f install.php -- \
 
 # Magento /shell
 
-echo -e "--(Magento /shell)--" ;\
+#echo -e "--(Magento /shell)--" ;\
 
-echo -e "--(Processo 1)--" ;\
-php shell/compiler.php --state ;\
-echo -e "--(Processo 2)--" ;\
-php shell/log.php --clean ;\
-echo -e "--(Processo 3)--" ;\
-php shell/indexer.php --status ;\
-echo -e "--(Processo 4)--" ;\
-php shell/indexer.php --info ;\
-echo -e "--(Processo 5)--" ;\
-php shell/indexer.php --reindexall
+#echo -e "--(Processo 1)--" ;\
+#php shell/compiler.php --state ;\
+#echo -e "--(Processo 2)--" ;\
+#php shell/log.php --clean ;\
+#echo -e "--(Processo 3)--" ;\
+#php shell/indexer.php --status ;\
+#echo -e "--(Processo 4)--" ;\
+#php shell/indexer.php --info ;\
+#echo -e "--(Processo 5)--" ;\
+#php shell/indexer.php --reindexall
 
 # Magento ./mage command-line
 

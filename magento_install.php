@@ -1,14 +1,8 @@
 <?php
-
-//
-
-/*
-
-chmod +x bootstrap.sh
-
-php bootstrap.php
-
-*/
+/**
+ * Copyright © 2017 Mozg. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
 
 //
 
@@ -36,7 +30,9 @@ echo "<pre>$output</pre>";
 
 //
 
-$url = "https://fleep.io/hook/OLuIRi0JRt2yv5OQisX6tg";
+/*
+
+$url = "";
 
 $data = array('bash'=>$output);
 $data = print_r( $data, true );
@@ -61,6 +57,8 @@ echo '<pre>';
 
 print_r($response);
 print_r($httpStatus);
+
+*/
 
 
 //
