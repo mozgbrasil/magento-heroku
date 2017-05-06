@@ -30,8 +30,8 @@ http://magento-heroku.herokuapp.com/?scandir=true&dir=/app/root/var/&load_file=t
 
 if ( empty($_REQUEST) ){
 
-    $version = '06052017_161445';
-    dump($version);
+    //$version = '06052017_161445';
+    //dump($version);
 
     $app_name = getenv("HEROKU_APP_NAME");
 
