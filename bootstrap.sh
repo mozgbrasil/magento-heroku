@@ -60,9 +60,12 @@ echo -e "--( ${WICH_MYSQL} )--" ;\
 
 #
 
-cd root
-
 echo -e "--(`pwd`)--" ;\
+echo -e "--(`ls -all`)--" ;\
+
+#
+
+cd root
 
 # Sample Data
 

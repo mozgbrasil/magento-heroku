@@ -12,7 +12,7 @@
   "logo": "http://mozg.com.br/assets/images/logos/Red_star.svg",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "echo 'eu em app.json 1' ; bash bootstrap.sh ;"
+    "postdeploy": "echo 'Yo_postdeploy' ; bash bootstrap.sh ;"
   },
   "env": {
     "SECRET_TOKEN": {
@@ -22,12 +22,13 @@
   },
   "image": "heroku/php",
   "addons": [
+    "jawsdb:leopard",
     "cleardb",
+    "heroku-postgresql",
     "semaphore",
     "codeship",
-    "jawsdb:leopard",
-    "sendgrid",
-    "heroku-postgresql"
+    "sendgrid"
+
   ],
   "buildpacks": [
     {
@@ -37,7 +38,7 @@
   "environments": {
     "test": {
       "scripts": {
-        "test": "echo 'eu em app.json 2';"
+        "test": "echo 'Yo_environments';"
       }
     }
   }
