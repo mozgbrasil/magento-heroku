@@ -92,6 +92,8 @@ cd root
 
 chmod 777 -R .
 
+pwd
+
 ls -all
 
 # Sample Data
@@ -117,6 +119,12 @@ mysql -h ${MAGENTO_DB_HOST} -P ${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGE
 echo -e "--(Processo 6)--" ;\
 
 #rm -fr compressed-no-mp3-magento-sample-data-1.9.1.0.tar compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z magento-sample-data-1.9.1.0
+
+echo -e "--(Processo 7)--" ;\
+
+pwd
+
+ls -all
 
 # Install Magento
 
