@@ -102,7 +102,7 @@ cp -fr magento-sample-data-1.9.1.0/media/* media/ ;\
 
 echo -e "--(Processo 5)--" ;\
 
-mysql -h "${MAGENTO_DB_HOST}" -p "${MAGENTO_DB_PORT}" -u "${MAGENTO_DB_USER}" -p"${MAGENTO_DB_PASS}" "${MAGENTO_DB_NAME}" < 'magento-sample-data-1.9.1.0/magento_sample_data_for_1.9.1.0.sql' ;\
+mysql -h ${MAGENTO_DB_HOST} -P ${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} < 'magento-sample-data-1.9.1.0/magento_sample_data_for_1.9.1.0.sql' ;\
 
 echo -e "--(Processo 6)--" ;\
 
