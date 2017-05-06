@@ -10,6 +10,10 @@
 
 Automação para criação de projeto Magento para o Heroku
 
+## Descrição
+
+Monte seu projeto Magento em apenas 1 clique, por apenas U$ 10,00 que é o custo para uso do banco de dados na Heroku
+
 ## Implantando no Heroku
 
 Clique abaixo para implantar esse APP na sua conta no Heroku

@@ -155,17 +155,17 @@ php shell/indexer.php --reindexall
 
 # Magento ./mage command-line
 
-echo -e "--(Magento ./mage)--" ;\
+#echo -e "--(Magento ./mage)--" ;\
 
-echo -e "--(Processo 1)--" ;\
-sh mage ;\
-echo -e "--(Processo 2)--" ;\
-sh mage mage-setup ;\
-echo -e "--(Processo 3)--" ;\
-sh mage sync ;\
-echo -e "--(Processo 4)--" ;\
-sh mage list-installed ;\
-echo -e "--(Processo 5)--" ;\
-sh mage list-upgrades ;\
+#echo -e "--(Processo 1)--" ;\
+#sh mage ;\
+#echo -e "--(Processo 2)--" ;\
+#sh mage mage-setup ;\
+#echo -e "--(Processo 3)--" ;\
+#sh mage sync ;\
+#echo -e "--(Processo 4)--" ;\
+#sh mage list-installed ;\
+#echo -e "--(Processo 5)--" ;\
+#sh mage list-upgrades ;\
 
 #
