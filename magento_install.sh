@@ -53,7 +53,7 @@ then
 
     echo -e "--(Check Database)--" ;\
 
-    mysql -h ${MAGENTO_DB_HOST} -P ${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -e "SHOW TABLES"
+    mysql -h ${MAGENTO_DB_HOST} -P ${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -v -e "SHOW TABLES"
 
 else
     echo -e "--(Unable to parse STRING from config)--" ;\
