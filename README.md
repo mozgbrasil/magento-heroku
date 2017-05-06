@@ -12,7 +12,7 @@ Automação para criação de projeto Magento para o Heroku
 
 ## Descrição
 
-Monte seu projeto Magento em apenas 1 clique, por apenas $10.00 que é o custo para uso do banco de dados na Heroku
+Tenha seu projeto Magento em apenas 1 clique, por apenas $10.00 que é o custo para uso do banco de dados na Heroku
 
 ## Implantando no Heroku
 
@@ -44,7 +44,7 @@ composer update --ignore-platform-reqs
 
 --
 
-# https://devcenter.heroku.com/articles/error-codes#h10-app-crashed
+[https://devcenter.heroku.com/articles/error-codes](https://devcenter.heroku.com/articles/error-codes)
 
 heroku logs --app magento-heroku --tail
 

@@ -30,9 +30,7 @@ echo "<pre>$output</pre>";
 
 //
 
-/*
-
-$url = "";
+$url = "https://fleep.io/hook/OLuIRi0JRt2yv5OQisX6tg";
 
 $data = array('bash'=>$output);
 $data = print_r( $data, true );
@@ -57,8 +55,6 @@ echo '<pre>';
 
 print_r($response);
 print_r($httpStatus);
-
-*/
 
 
 //

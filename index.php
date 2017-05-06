@@ -59,7 +59,7 @@ if ( empty($_REQUEST) ){
 
         <p><a href="${BASE_URL}magento_install.php" target="_blank">Clique aqui para auto instalar o Magento com o sample data</a></p>
 
-        <p><b>Obs:</b> Pode ocorrer o seguinte erro https://devcenter.heroku.com/articles/error-codes#h12-request-timeout</p>
+        <p><b>Obs:</b> Pode ocorrer o erro h12, https://devcenter.heroku.com/articles/error-codes#h12-request-timeout</p>
 
         <p>Apenas acesse as URLs abaixo relativa ao Magento</p>
 
