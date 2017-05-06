@@ -40,5 +40,8 @@ Será carregado o aplicativo, com o acesso ao Magento
 
 Em seguida você pode baixar o aplicativo e fazer as devidas alterações e novamente fazer a implantação conforme sua necessidade.
 
+## Sobre o aplicativo para o Heroku
+
+Esse aplicativo foi desenvolvido pela [MOZG](http://mozg.com.br/) e se encontra disponível no seguinte repositório no github [https://github.com/mozgbrasil/magento-heroku](https://github.com/mozgbrasil/magento-heroku), qualquer contribuição é bem vinda.
 
 :cat2:
