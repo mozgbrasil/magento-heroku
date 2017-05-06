@@ -30,10 +30,10 @@ if ( empty($_REQUEST) ){
 
     $MAGENTO_URL = $BASE_URL . 'root';
 
-    define("BASE_URL", $BASE_URL);
-    define("MAGENTO_URL", $MAGENTO_URL);
+    putenv("BASE_URL=$BASE_URL");
+    putenv("MAGENTO_URL=$MAGENTO_URL");
 
-    $parsed_url = parse_url($base_url);
+    $parsed_url = parse_url($BASE_URL);
     $host = explode('.', $parsed_url['host']);
     $subdomain = $host[0];
     $APP_NAME = $subdomain;
@@ -61,8 +61,8 @@ EOF;
     }
 
     $html .= <<<EOF
-    <p><a href="$base_url/root/admin" target="_blank">Clique aqui para acesso ao backend do Magento</a></p>
-    <p><a href="$base_url/root" target="_blank">Clique aqui para para acesso ao frontend do Magento</a></p>
+    <p><a href="$BASE_URL/root/admin" target="_blank">Clique aqui para acesso ao backend do Magento</a></p>
+    <p><a href="$BASE_URL/root" target="_blank">Clique aqui para para acesso ao frontend do Magento</a></p>
 EOF;
 
     echo $html;
