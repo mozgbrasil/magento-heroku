@@ -158,14 +158,14 @@ php shell/indexer.php --reindexall
 echo -e "--(Magento ./mage)--" ;\
 
 echo -e "--(Processo 1)--" ;\
-./mage ;\
+sh mage ;\
 echo -e "--(Processo 2)--" ;\
-./mage mage-setup ;\
+sh mage mage-setup ;\
 echo -e "--(Processo 3)--" ;\
-./mage sync ;\
+sh mage sync ;\
 echo -e "--(Processo 4)--" ;\
-./mage list-installed ;\
+sh mage list-installed ;\
 echo -e "--(Processo 5)--" ;\
-./mage list-upgrades ;\
+sh mage list-upgrades ;\
 
 #
