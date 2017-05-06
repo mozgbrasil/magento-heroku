@@ -43,15 +43,17 @@ if ( empty($_REQUEST) ){
     $html = '';
 
     if( !file_exists($path_file) ){
-    $html .= <<<EOF
+        $html .= <<<EOF
 
-    <p>Execute o seguinte comando no seu terminal</p>
+        <p>Execute o seguinte comando no seu terminal</p>
 
-    <p>heroku run --app $APP_NAME ' pwd ; ls -all ; which mysql ; composer --version ; php -v ; bash magento_install.sh ; '</p>
+        <p>heroku run --app $APP_NAME ' pwd ; ls -all ; which mysql ; composer --version ; php -v ; bash magento_install.sh ; '</p>
 
 EOF;
 
-    exit;
+        echo $html;
+
+        exit;
     }
 
     $html .= <<<EOF

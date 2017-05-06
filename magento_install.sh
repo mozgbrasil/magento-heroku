@@ -42,15 +42,24 @@ then
     MAGENTO_DB_USER=${BASH_REMATCH[1]}
     MAGENTO_DB_PASS=${BASH_REMATCH[2]}
 
-    echo -e "--(${MAGENTO_URL})--" ;\
-    echo -e "--(${MAGENTO_DB_HOST})--" ;\
-    echo -e "--(${MAGENTO_DB_PORT})--" ;\
-    echo -e "--(${MAGENTO_DB_NAME})--" ;\
-    echo -e "--(${MAGENTO_DB_USER})--" ;\
-    echo -e "--(${MAGENTO_DB_PASS})--" ;\
+    echo -e "--(MAGENTO_URL: ${MAGENTO_URL})--" ;\
+    echo -e "--(DB_HOST: ${MAGENTO_DB_HOST})--" ;\
+    echo -e "--(DB_PORT: ${MAGENTO_DB_PORT})--" ;\
+    echo -e "--(DB_NAME: ${MAGENTO_DB_NAME})--" ;\
+    echo -e "--(DB_USER: ${MAGENTO_DB_USER})--" ;\
+    echo -e "--(DB_PASS: ${MAGENTO_DB_PASS})--" ;\
+
+    # Check Database
+
+    echo -e "--(Check Database)--" ;\
+
+    mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u "${MAGENTO_DB_USER}" -p"${MAGENTO_DB_PASS}" "${MAGENTO_DB_NAME}" -e "SHOW TABLES"
+
 else
     echo -e "--(Unable to parse STRING from config)--" ;\
 fi
+
+exit
 
 #
 
@@ -93,17 +102,11 @@ cp -fr magento-sample-data-1.9.1.0/media/* media/ ;\
 
 echo -e "--(Processo 5)--" ;\
 
-mysql -h ${MAGENTO_DB_HOST}${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} < 'magento-sample-data-1.9.1.0/magento_sample_data_for_1.9.1.0.sql' ;\
+mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u "${MAGENTO_DB_USER}" -p"${MAGENTO_DB_PASS}" "${MAGENTO_DB_NAME}" < 'magento-sample-data-1.9.1.0/magento_sample_data_for_1.9.1.0.sql' ;\
 
 echo -e "--(Processo 6)--" ;\
 
 rm -fr compressed-no-mp3-magento-sample-data-1.9.1.0.tar compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z magento-sample-data-1.9.1.0
-
-# Check Database
-
-echo -e "--(Check Database)--" ;\
-
-mysql -h ${MAGENTO_DB_HOST}${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -e "SHOW TABLES"
 
 # Install Magento
 
