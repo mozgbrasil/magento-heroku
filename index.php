@@ -38,8 +38,6 @@ if ( empty($_REQUEST) ){
     $subdomain = $host[0];
     $APP_NAME = $subdomain;
 
-    dump($parsed_url);
-
     $path_file = __DIR__ . '/root/app/etc/local.xml';
 
     $html = '';
