@@ -8,11 +8,15 @@
 
 #
 
+echo -e "--(ENV)--" ;\
+
 # https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
 
 printenv
 
 #
+
+echo -e "--(REGEX_EXPR)--" ;\
 
 #MAGENTO_URL="$1"
 
@@ -50,7 +54,7 @@ fi
 
 #
 
-echo -e "--(Start)--" ;\
+echo -e "--(WICH)--" ;\
 
 #
 
@@ -64,10 +68,10 @@ echo -e "--( ${WICH_MYSQL} )--" ;\
 
 #
 
+echo -e "--(DIRECTORY)--" ;\
+
 echo -e "--(`pwd`)--" ;\
 echo -e "--(`ls -all`)--" ;\
-
-#
 
 cd root
 
