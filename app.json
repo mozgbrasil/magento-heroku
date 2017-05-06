@@ -31,9 +31,6 @@
   ],
   "buildpacks": [
     {
-      "url": "heroku/php"
-    },
-    {
       "url": "https://github.com/gaumire/heroku-buildpack-mysql"
     }
   ],

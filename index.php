@@ -35,7 +35,7 @@ if ( empty($_REQUEST) ){
     if( !file_exists($path_file) ){
     $html .= <<<EOF
 
-    <p>Execute o seguinte comando</p>
+    <p>Execute o seguinte comando no seu terminal</p>
 
     <p>heroku run --app $app_name ' pwd ; ls -all ; which mysql ; composer --version ; php -v ; bash bootstrap.sh ; '</p>
 
