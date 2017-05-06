@@ -47,7 +47,7 @@ if ( empty($_REQUEST) ){
 
         <p><b>Execute o seguinte comando no seu terminal, para auto instalar o Magento com o sample data e módulos recomendado</b></p>
 
-        <p>heroku run --app $APP_NAME ' pwd ; ls -all ; which mysql ; composer --version ; php -v ; bash magento_install.sh ; '</p>
+        <p>heroku run --app $APP_NAME ' bash magento_install.sh ; '</p>
 
         <p><b>Em seguida recarregue essa página</b></p>
 
@@ -62,7 +62,7 @@ EOF;
     <p><a href="$BASE_URL/root/admin" target="_blank">Clique aqui para acesso ao backend do Magento</a></p>
 
     <p><a href="$BASE_URL/root" target="_blank">Clique aqui para para acesso ao frontend do Magento</a></p>
-    
+
 EOF;
 
     echo $html;
