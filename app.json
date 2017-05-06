@@ -30,11 +30,6 @@
     "sendgrid"
 
   ],
-  "buildpacks": [
-    {
-      "url": "https://github.com/gaumire/heroku-buildpack-mysql"
-    }
-  ],
   "environments": {
     "test": {
       "scripts": {

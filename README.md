@@ -34,6 +34,8 @@ composer update --ignore-platform-reqs
 
 heroku logs --app magento-heroku --tail
 
+heroku logs --app tranquil-wave-18263  --tail
+
 --
 
 heroku --version
@@ -61,6 +63,8 @@ heroku releases --app magento-heroku
 heroku config --app magento-heroku
 
 heroku run --app magento-heroku ' pwd ; ls -all /bin ; which php ; composer --version ; php -v ; composer update'
+
+heroku run --app magento-heroku ' pwd ; ls -all '
 
 heroku open --app magento-heroku
 

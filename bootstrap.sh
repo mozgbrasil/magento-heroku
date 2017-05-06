@@ -2,6 +2,8 @@
 
 #
 
+# No app.json em postdeploy, não é criado a pasta root do Magento, sendo necessário a execução manual desse arquivo após o Deploy
+
 # bash -x bootstrap.sh
 
 #
