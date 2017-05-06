@@ -86,6 +86,8 @@ heroku run --app magento-heroku ' bash magento_install.sh ; '
 
 heroku open --app magento-heroku
 
+heroku ps:scale web=1 --app magento-heroku  
+
 --
 
 heroku keys:add
