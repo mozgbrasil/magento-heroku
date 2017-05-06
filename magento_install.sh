@@ -93,7 +93,7 @@ cp -fr magento-sample-data-1.9.1.0/media/* media/ ;\
 
 echo -e "--(Processo 5)--" ;\
 
-mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} < 'magento-sample-data-1.9.1.0/magento_sample_data_for_1.9.1.0.sql' ;\
+mysql -h ${MAGENTO_DB_HOST}${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} < 'magento-sample-data-1.9.1.0/magento_sample_data_for_1.9.1.0.sql' ;\
 
 echo -e "--(Processo 6)--" ;\
 
@@ -103,7 +103,7 @@ rm -fr compressed-no-mp3-magento-sample-data-1.9.1.0.tar compressed-no-mp3-magen
 
 echo -e "--(Check Database)--" ;\
 
-mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -e "SHOW TABLES"
+mysql -h ${MAGENTO_DB_HOST}${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -e "SHOW TABLES"
 
 # Install Magento
 
