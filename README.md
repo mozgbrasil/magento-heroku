@@ -8,15 +8,15 @@
 
 ## Sinopse
 
-Automação para criação de projeto Magento para o Heroku
+Automação para criação de projeto [Magento](https://magento.com/) na [Heroku](https://www.heroku.com/)
 
 ## Motivação
 
-Evangelizar a plataforma Magento
+Evangelizar a plataforma [Magento](https://magento.com/)
 
 ## Característica técnica
 
-Como o Heroku trabalha sobre o [Composer](https://getcomposer.org/), todas as dependências a ser usada no projeto está registrada no arquivo [composer.json](composer.json)
+Como a Heroku trabalha sobre o [Composer](https://getcomposer.org/), todas as dependências a ser usada no projeto está registrada no arquivo [composer.json](composer.json)
 
 ## Descrição
 
