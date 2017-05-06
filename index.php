@@ -24,6 +24,8 @@ http://magento-heroku.herokuapp.com/?scandir=true&dir=/app/root/var/&load_file=t
 
 if ( empty($_REQUEST) ){
 
+   $app_name = getenv("HEROKU_APP_NAME");
+
     $base_url = 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']);
 
     $path_file = __DIR__ . '/root/app/etc/local.xml';
@@ -32,7 +34,11 @@ if ( empty($_REQUEST) ){
 
     if( !file_exists($path_file) ){
     $html .= <<<EOF
-    <p><a href="$base_url/magento_install.php" target="_blank">Clique aqui para instalar o Magento</a></p>
+
+    <p>Execute o seguinte comando</p>
+
+    <p>heroku run --app $app_name ' pwd ; ls -all ; which mysql ; composer --version ; php -v ; bash bootstrap.sh ; '</p>
+
 EOF;
     }
 
