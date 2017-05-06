@@ -38,14 +38,14 @@ then
     MAGENTO_DB_USER=${BASH_REMATCH[1]}
     MAGENTO_DB_PASS=${BASH_REMATCH[2]}
 
-    echo "${MAGENTO_URL}"
-    echo "${MAGENTO_DB_HOST}"
-    echo "${MAGENTO_DB_PORT}"
-    echo "${MAGENTO_DB_NAME}"
-    echo "${MAGENTO_DB_USER}"
-    echo "${MAGENTO_DB_PASS}"
+    echo -e "--(${MAGENTO_URL})--" ;\
+    echo -e "--(${MAGENTO_DB_HOST})--" ;\
+    echo -e "--(${MAGENTO_DB_PORT})--" ;\
+    echo -e "--(${MAGENTO_DB_NAME})--" ;\
+    echo -e "--(${MAGENTO_DB_USER})--" ;\
+    echo -e "--(${MAGENTO_DB_PASS})--" ;\
 else
-    echo "Unable to parse STRING from config"
+    echo -e "--(Unable to parse STRING from config)--" ;\
 fi
 
 #
