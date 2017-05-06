@@ -96,7 +96,7 @@ mysql -h "${MAGENTO_DB_HOST}${MAGENTO_DB_PORT}" -u ${MAGENTO_DB_USER} -p${MAGENT
 
 #
 
-curl --request POST https://fleep.io/hook/OLuIRi0JRt2yv5OQisX6tg --data '{  
+#curl --request POST https://fleep.io/hook/OLuIRi0JRt2yv5OQisX6tg --data '{  
     "MerchantOrderId":"2014111703"
 }' --verbose
 
