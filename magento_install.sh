@@ -20,7 +20,7 @@ echo -e "--(REGEX_EXPR)--" ;\
 
 #MAGENTO_URL="$1"
 
-REGEX_EXPR='postgres:\/\/(.+):(.+)@(.+)(:5432| )\/(.+)'
+REGEX_EXPR='postgres:\/\/(.+):(.+)@(.+):(5432| )\/(.+)'
 #$DATABASE_URL # PostgreSQL
 
 REGEX_EXPR='mysql:\/\/(.+):(.+)@(.+):(3306| )\/(.+)'
@@ -53,7 +53,7 @@ then
 
     echo -e "--(Check Database)--" ;\
 
-    mysql -h "${MAGENTO_DB_HOST}" -p "${MAGENTO_DB_PORT}" -u "${MAGENTO_DB_USER}" -p"${MAGENTO_DB_PASS}" "${MAGENTO_DB_NAME}" -e "SHOW TABLES"
+    mysql -h ${MAGENTO_DB_HOST} -P ${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGENTO_DB_PASS} ${MAGENTO_DB_NAME} -e "SHOW TABLES"
 
 else
     echo -e "--(Unable to parse STRING from config)--" ;\
