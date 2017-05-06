@@ -26,7 +26,12 @@ if ( empty($_REQUEST) ){
 
     $app_name = getenv("HEROKU_APP_NAME");
 
-    $base_url = 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']);
+    $BASE_URL = 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']);
+
+    $MAGENTO_URL = $BASE_URL . 'root';
+
+    define("BASE_URL", $BASE_URL);
+    define("MAGENTO_URL", $MAGENTO_URL);
 
     $parsedUrl = parse_url($base_url);
     $host = explode('.', $parsedUrl['host']);

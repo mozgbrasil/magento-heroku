@@ -14,6 +14,8 @@ printenv
 
 #
 
+#MAGENTO_URL="$1"
+
 REGEX_EXPR='postgres:\/\/(.+):(.+)@(.+)(:5432| )\/(.+)'
 #$DATABASE_URL # PostgreSQL
 
@@ -36,12 +38,12 @@ then
     MAGENTO_DB_USER=${BASH_REMATCH[1]}
     MAGENTO_DB_PASS=${BASH_REMATCH[2]}
 
-    #echo "${MAGENTO_URL}"
-    #echo "${MAGENTO_DB_HOST}"
-    #echo "${MAGENTO_DB_PORT}"
-    #echo "${MAGENTO_DB_NAME}"
-    #echo "${MAGENTO_DB_USER}"
-    #echo "${MAGENTO_DB_PASS}"
+    echo "${MAGENTO_URL}"
+    echo "${MAGENTO_DB_HOST}"
+    echo "${MAGENTO_DB_PORT}"
+    echo "${MAGENTO_DB_NAME}"
+    echo "${MAGENTO_DB_USER}"
+    echo "${MAGENTO_DB_PASS}"
 else
     echo "Unable to parse STRING from config"
 fi
