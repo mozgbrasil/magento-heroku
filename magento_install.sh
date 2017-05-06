@@ -32,10 +32,10 @@ if [[ $JAWSDB_URL =~ $REGEX_EXPR ]]
 then
     #echo The regex matches!
     #echo $BASH_REMATCH      
-    #echo ${BASH_REMATCH[1]} 
+    #echo ${BASH_REMATCH[1]}
     #echo ${BASH_REMATCH[2]}
-    #echo ${BASH_REMATCH[3]} 
-    #echo ${BASH_REMATCH[4]} 
+    #echo ${BASH_REMATCH[3]}
+    #echo ${BASH_REMATCH[4]}
     #echo ${BASH_REMATCH[5]}
 
     MAGENTO_DB_HOST=${BASH_REMATCH[3]}
@@ -83,6 +83,10 @@ echo -e "--(`pwd`)--" ;\
 echo -e "--(`ls -all`)--" ;\
 
 cd root
+
+chmod 777 -R .
+
+ls -all
 
 # Sample Data
 
@@ -132,14 +136,6 @@ php -f install.php -- \
 --admin_email "user@example.com" \
 --admin_username "admin" \
 --admin_password "123456a"
-
-# ls
-
-ls -all
-
-# Permissões
-
-chmod 777 -R .
 
 # Magento /shell
 
