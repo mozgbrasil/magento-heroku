@@ -12,7 +12,7 @@
   "logo": "http://mozg.com.br/assets/images/logos/Red_star.svg",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "echo 'eu em app.json 1' ; php bootstrap.php ;"
+    "postdeploy": "echo 'eu em app.json 1' ; bash bootstrap.sh ;"
   },
   "env": {
     "SECRET_TOKEN": {
@@ -28,6 +28,17 @@
     "jawsdb:leopard",
     "sendgrid",
     "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    },
+    {
+      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+    },
+    {
+      "url": "https://github.com/Shopify/heroku-buildpack-mysql"
+    }
   ],
   "environments": {
     "test": {
