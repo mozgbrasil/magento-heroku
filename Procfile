@@ -1,1 +1,2 @@
-web: sh web-boot.sh
+#web: vendor/bin/heroku-php-apache2
+web: sh webapp.sh
