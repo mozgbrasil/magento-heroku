@@ -10,7 +10,7 @@
 
 # https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
 
-#printenv
+printenv
 
 #
 
