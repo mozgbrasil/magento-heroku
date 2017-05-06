@@ -32,9 +32,11 @@ composer update --ignore-platform-reqs
 
 --
 
+# https://devcenter.heroku.com/articles/error-codes#h10-app-crashed
+
 heroku logs --app magento-heroku --tail
 
-heroku logs --app tranquil-wave-18263  --tail
+heroku logs --app ? --tail
 
 --
 
