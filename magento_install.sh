@@ -98,7 +98,7 @@ wget https://raw.githubusercontent.com/Vinai/compressed-magento-sample-data/1.9.
 
 echo -e "--(Processo 3)--" ;\
 
-tar xvzf compressed-no-mp3-magento-sample-data-1.9.1.0.tgz ;\
+tar xzf compressed-no-mp3-magento-sample-data-1.9.1.0.tgz ;\
 
 echo -e "--(Processo 4)--" ;\
 
@@ -110,7 +110,7 @@ mysql -h ${MAGENTO_DB_HOST} -P ${MAGENTO_DB_PORT} -u ${MAGENTO_DB_USER} -p${MAGE
 
 echo -e "--(Processo 6)--" ;\
 
-rm -fr compressed-no-mp3-magento-sample-data-1.9.1.0.tar compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z magento-sample-data-1.9.1.0
+#rm -fr compressed-no-mp3-magento-sample-data-1.9.1.0.tar compressed-no-mp3-magento-sample-data-1.9.1.0.tar.7z magento-sample-data-1.9.1.0
 
 # Install Magento
 
@@ -122,10 +122,10 @@ php -f install.php -- \
 --timezone "America/Sao_Paulo" \
 --default_currency "BRL" \
 --db_host "${MAGENTO_DB_HOST}:${MAGENTO_DB_PORT}" \
---db_name ${MAGENTO_DB_NAME} \
---db_user ${MAGENTO_DB_USER} \
---db_pass ${MAGENTO_DB_PASS} \
---url $MAGENTO_URL \
+--db_name "${MAGENTO_DB_NAME}" \
+--db_user "${MAGENTO_DB_USER}" \
+--db_pass "${MAGENTO_DB_PASS}" \
+--url "$MAGENTO_URL" \
 --skip_url_validation "yes" \
 --use_rewrites "yes" \
 --use_secure "no" \

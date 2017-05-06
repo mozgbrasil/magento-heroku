@@ -26,6 +26,14 @@ Será carregado o aplicativo, com o acesso ao Magento
 
 ## Comandos CLI
 
+--
+
+Install the Heroku CLI
+
+Download and install the [Heroku CLI][https://devcenter.heroku.com/articles/heroku-cli]
+
+--
+
 cd ~/dados/public_html/mozg/git/magento-heroku
 
 composer update --ignore-platform-reqs
