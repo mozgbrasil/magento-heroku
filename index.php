@@ -18,6 +18,8 @@ require 'vendor/autoload.php';
 
 http://magento-heroku.herokuapp.com/?server=true
 
+http://magento-heroku.herokuapp.com/?phpinfo=true
+
 http://magento-heroku.herokuapp.com/?database=true
 
 http://magento-heroku.herokuapp.com/?scandir=true&dir=/app/root/var/&load_file=true&file=/app/root/var/report/821626541659&database=true
