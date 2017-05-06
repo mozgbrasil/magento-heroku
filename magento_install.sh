@@ -61,8 +61,6 @@ else
     echo -e "--(Unable to parse STRING from config)--" ;\
 fi
 
-exit
-
 #
 
 echo -e "--(WICH)--" ;\
