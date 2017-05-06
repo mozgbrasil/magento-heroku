@@ -12,12 +12,19 @@
   "logo": "http://mozg.com.br/assets/images/logos/Red_star.svg",
   "success_url": "/",
   "scripts": {
-    "postdeploy": "echo 'Yo_postdeploy' ; "
+    "postdeploy": "echo 'Yo_postdeploy' ; bootstrap.sh",
+    "pr-predestroy": "echo 'Yo_predestroy' ; teardown.sh ; "
   },
   "env": {
     "SECRET_TOKEN": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
+    },
+    "HEROKU_APP_NAME": {
+      "required": false
+    },
+    "HEROKU_PARENT_APP_NAME": {
+      "required": false
     }
   },
   "image": "heroku/php",

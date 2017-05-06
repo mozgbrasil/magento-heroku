@@ -37,7 +37,7 @@ if ( empty($_REQUEST) ){
 
     <p>Execute o seguinte comando no seu terminal</p>
 
-    <p>heroku run --app $app_name ' pwd ; ls -all ; which mysql ; composer --version ; php -v ; bash bootstrap.sh ; '</p>
+    <p>heroku run --app $app_name ' pwd ; ls -all ; which mysql ; composer --version ; php -v ; bash magento_install.sh ; '</p>
 
 EOF;
     }
