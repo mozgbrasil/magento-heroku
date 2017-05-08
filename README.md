@@ -16,7 +16,11 @@ Evangelizar a plataforma [Magento](https://magento.com/)
 
 ## Característica técnica
 
-Como a Heroku trabalha sobre o [Composer](https://getcomposer.org/), todas as dependências a ser usada no projeto está registrada no arquivo [composer.json](composer.json)
+Para o aplicativo o Heroku usa o arquvo [app.json](app.json)
+
+Para a implantação o Heroku usa o arquvo [composer.json](composer.json)
+
+Como a Heroku trabalha com o [Composer](https://getcomposer.org/), todas as dependências a ser usada no projeto está registrada no arquivo [composer.json](composer.json)
 
 ## Descrição
 
