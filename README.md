@@ -6,6 +6,14 @@
 
 # Magento\Heroku
 
+
+
+
+Use o seguinte repositório https://github.com/mozgbrasil/heroku-magento
+
+
+
+
 ## Sinopse
 
 Automação para criação de projeto [Magento](https://magento.com/) na [Heroku](https://www.heroku.com/)
